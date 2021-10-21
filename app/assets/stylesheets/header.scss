@@ -10,32 +10,33 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.box_buttons {
+  padding-left: 15px;
+  padding-right: 15px;
+  // background-color: red;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  align-items: center;
+  // background: #AAE163;
+  border-radius: 27px;
+}
 .pages_buttons {
  display: inline-flex;
  justify-content: space-between;
  align-items: baseline;
  height: 50px;
+ width: 300px;
 }
 .button_pages {
 
 }
 .not_that_page {
-  padding-right: 32px;
+  // padding-right: 32px;
 }
 
 .thatpage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 40px;
-  left: 932px;
-  top: 58px;
   background: #AAE163;
-  border-radius: 27px;
-  margin-right: 18px;
-
 }
 
 .header_box {

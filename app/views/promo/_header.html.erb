@@ -5,12 +5,16 @@
     <%= image_tag 'logo.svg'  %>
   </div>
   <div class="pages_buttons">
-  <div class="thatpage">
-    <div class="button_pages"><%= link_to "ПРОМО", promo_path %></div>
-  </div>
-  <div class="button_pages not_that_page"> <%= link_to "О ПРОЕКТЕ", about_path %> </div>
-  <!-- <div class="button_pages not_that_page"> <a href="posts">  </a> </div> -->
+<div class="box_buttons thatpage">
+  <div class="button_pages "><%= link_to "ПРОМО", promo_path %></div>
+</div>
+
+<div class="box_buttons">
+   <div class="button_pages"> <%= link_to "О ПРОЕКТЕ", about_path %>  </div>
+</div>
+<div class="box_buttons">
 <%= link_to "ФОРУМ", posts_path %>
+</div>
   </div>
   </div>
 </div>
