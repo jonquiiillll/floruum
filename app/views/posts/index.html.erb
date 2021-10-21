@@ -1,0 +1,49 @@
+
+<%= render 'header' %>
+
+
+<div class="container_body">
+  <h1>Актуальные вопросы</h1>
+  <!-- <p id="notice"><%= notice %></p> -->
+
+  <div class="container_content">
+  <% @posts.each do |post| %>
+  <div class="window">
+    <div class="box_title">
+
+    <div class="title">
+      <%= post.title %>
+    </div>
+
+    <div class="functions">
+      <td><%= link_to 'Показать', post %></td>
+      <td><%= link_to 'Изменить', edit_post_path(post) %></td>
+      <td><%= link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </div>
+    </div>
+
+  <div class="box_content">
+
+    <div class="text_content">
+      <%= post.content %>
+    </div>
+
+    <div class="user_name">
+      <%= post.name %>
+    </div>
+
+  </div>
+
+
+  </div>
+
+
+
+  <% end %>
+  </div>
+  <br>
+  <div class="NewPost">
+  <%= link_to 'Новый пост', new_post_path %>
+  </div>
+
+</div>

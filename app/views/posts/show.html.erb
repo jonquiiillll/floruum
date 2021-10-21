@@ -1,0 +1,44 @@
+<%= render 'header' %>
+<div class="container_body_show">
+
+<div class="title_box">
+  <p class="Title_show">
+    <strong></strong>
+    <%= @post.title %>
+  </p>
+  <div class="">
+    <%= link_to 'Изменить', edit_post_path(@post) %> |
+    <%= link_to 'Назад', posts_path %>
+  </div>
+
+
+</div>
+<p>
+	<strong> Author:</strong>
+	<%= @post.author %>
+</p>
+
+<p>
+  <strong></strong>
+  <%= @post.name %>
+</p>
+
+<div class="content_text_show">
+<p>
+  <strong></strong>
+  <%= @post.content %>
+</p>
+</div>
+<div class="images">
+<%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+</div>
+
+
+<h2 class="answer">Ответы:</h2>
+<%= render @post.comments %>
+
+<h2>Добавить комментарий:</h2>
+<%= render "comments/form" %>
+
+
+</div>
