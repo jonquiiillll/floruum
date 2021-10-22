@@ -6,10 +6,10 @@
   display: flex;
   justify-content: space-between;
 }
-body {
-  margin: 0;
-  padding: 0;
-}
+// body {
+//   margin: 0;
+//   padding: 0;
+// }
 .box_buttons {
   padding-left: 15px;
   padding-right: 15px;
@@ -42,9 +42,7 @@ body {
 .header_box {
   display: flex;
   width: 100%;
-
   margin: 0;
-  background: #FFFFFF;
   justify-content: space-between;
 }
 .img {
