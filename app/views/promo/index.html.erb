@@ -1,8 +1,142 @@
  <%= render 'header' %>
 
- 
+
 <div class="container_body">
-<h2>Узнать раньше всех о запуске проекта:</h2>
-<%= render "subscribers/form" %>
+  <div class="main">
+
+<div class="text_info">
+  <p class="mini_text">Florum – сообщество садоводов, в котором вы можете <br> быстро получить ответ на любой вопрос насчет растений. </p>
+
+<p class="main_text_promo">Любите растения? <br>
+Мы тоже!</p>
+<a href="about">
+<div class="button">
+<p class="button_text">ПЕРЕЙТИ К ОБЩЕНИЮ</p>
+<div class="linkto">     <%= image_tag 'strelka.svg'  %>  </div>
+</div>
+</a>
+</div>
+<div class="main_screen">
+</div>
+  </div>
+  <div class="lid">
+    <div class="text_promo_lid">
+      Вместе мы узнаем больше
+    </div>
+  </div>
+  <div class="together">
+  <div class="priority">
+  <div class="number_prior"style="
+    margin-left: 65px;">
+    <div class="number_img"> <%= image_tag 'cloud_priority.svg'  %> </div>
+    <div class="text_image"> ЗАДАЙ <br> ВОПРОС</div>
+   </div>
+   <!-- я правда сделала все это всего за день. Я очень устала и хочу спать -->
+  <div class="cloud_priority">
+<div class="text">
+<div class="circle"> </div>
+<div class="nick"> jonquiiillll</div>
+<div class="time"> 21 минуту назад</div>
+ </div>
+<div class="image_cloud">
+<div class="text_image_cloud">
+Как пересадить орхидею сорта фаленопсис?
+</div>
+
+</div>
+   </div>
+  </div>
+
+  <div class="priority">
+  <div class="number_prior">
+    <div class="number_img"> <%= image_tag '2number.svg'  %> </div>
+    <div class="text_image"> ПОЛУЧИ <br>ПОМОЩЬ</div>
+   </div>
+   <!-- я правда сделала все это всего за день. Я очень устала и хочу спать -->
+  <div class="cloud_priority">
+<div class="text">
+<div class="circle"> </div>
+<div class="nick"> kirill98</div>
+<div class="time"> только что</div>
+ </div>
+<div class="image_cloud2">
+<div class="text_image_cloud">
+Чтобы сделать все правильно, вам достаточно <br>придерживаться всего 5 простых шагов. Во-первых....
+</div>
+
+</div>
+   </div>
+  </div>
+
+  <div class="priority">
+  <div class="number_prior">
+    <div class="number_img"> <%= image_tag '3number.svg'  %> </div>
+    <div class="text_image"> ДЕЛИСЬ <br> ЗНАНИЯМИ</div>
+   </div>
+   <!-- я правда сделала все это всего за день. Я очень устала и хочу спать -->
+  <div class="cloud_priority">
+<div class="text">
+<div class="circle"> </div>
+<div class="nick"> kirill98</div>
+<div class="time"> только что</div>
+ </div>
+<div class="image_cloud3">
+<div class="text_image_cloud">
+Завяла фиалка! Как можно оживить ее?
+</div>
+
+</div>
+   </div>
+  </div>
+
+  </div>
+  <div class="text_promo_lid">
+    Любишь исследовать? <br>
+  Загляни к нам в справочник!
+  </div>
+  <div class="container_book">
+
+<div class="plants">
+
+
+  <div class="book">
+  <div class="blocks_book">
+    <div class="img_book"> <%= image_tag 'flo.svg'  %> </div>
+    <div class="img_book_un"> <%= image_tag 'pap.svg'  %> </div>
+    <div class="img_book_un"> <%= image_tag 'mho.svg'  %> </div>
+  </div>
+  </div>
+  <div class="book">
+  <div class="blocks_book">
+    <div class="img_book"> <%= image_tag 'plau.svg'  %> </div>
+    <div class="img_book_un"> <%= image_tag 'lin.svg'  %> </div>
+    <div class="img_book_unusual"> <%= image_tag 'last.svg'  %> </div>
+  </div>
+  </div>
+  </div>
+  <div class="text_plant">
+    <div class="text_container">
+      <p class="text_plant_small">Находи</p>
+      <p class="main_small">Находи новые интересующие <br> темы для обсуждения</p>
+    </div>
+    <div class="text_container">
+      <p class="text_plant_small">Изучай</p>
+      <p class="main_small">Находи и исследуй информацию
+о незнакомых видах растений</p>
+    </div>
+    <div class="text_container">
+      <p class="text_plant_small">Узнавай</p>
+      <p class="main_small">Узнавай новое о своих <br>растениях</p>
+    </div>
+  </div>
+    </div>
+    <div class="subscribe">
+      <div class="container_sub">
+        <p class="end">ПОДПИШИТЕСЬ НА НАШИ <br> ОБНОВЛЕНИЯ</p>
+        <%= render "subscribers/form" %>
+      </div>
+
+    </div>
+
 
 </div>

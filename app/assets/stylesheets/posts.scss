@@ -7,22 +7,30 @@ body {
   background-color: green;
 }
 td {
-  background-color: blue;
+  background-color: blue; padding: 10px;
 }
 .Title_show {
   font-weight: bold;
   font-size: 32px;
 }
 .container_content {
-  width: 1000px;
+  width: 1310px;
   display: flex;
-  flex-flow: column;
+  flex-wrap: wrap;
   // border: 1px solid #A9E163;
 }
-.container_body {
-  width: 1200px;
+.container_posts {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.container_body_posts {
+  width: 1250px;
     margin: 0 auto;
     height: 200px;
+}
+.actual {
+  margin: 14px;
 }
 .postic {
   border: 1px solid #A9E163;
@@ -31,11 +39,18 @@ td {
 .window:first-child {
   // margin-top: 50px;
 }
+.NewPost {
+  margin: 14px;
+}
 .window {
-  border: 1px solid #A9E163;
+  margin: 14px;
+  padding: 15px;
+  border: 1px solid inherit;
   margin-top: 10px;
-  border-radius: 10px;
-  width: 50%;
+  width: 45%;
+  background: #FFFFFF;
+box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+border-radius: 21px;
 }
 .title {
   color: #609B17;
@@ -43,7 +58,10 @@ td {
   margin: 10px 0px 10px 15px;
 }
 .user_name {
- font-weight: bold;
+  font-weight:  bold;
+}
+.images {
+  width: 100px!important;
 }
 .box_title {
   display: flex;
@@ -56,7 +74,9 @@ td {
   display: flex;
   justify-content: space-between;
   margin: 15px;
+  margin-bottom: 0px;
 }
+
 .title_box {
   display: flex;
   justify-content: space-between;
@@ -187,7 +207,8 @@ a {
 
 input[type="submit"] {
   width: 127px;
-  height: 37px;
+  height: 39px;
+
   border: none;
   background: #A9E163;
   border-radius: 50px;
