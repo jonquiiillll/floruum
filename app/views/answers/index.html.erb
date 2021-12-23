@@ -1,0 +1,57 @@
+<div class="container_body_posts">
+
+<div class="side_bar">
+  <div class="menu">
+    <%= link_to "Публикации", posts_path %> <br>
+  </div>
+  <% if user_signed_in? && current_user.isadmin == true %>
+  <div class="menu">
+    <%= link_to "Комментарии", answers_path %>
+  </div>
+  <% end %>
+  <div class="menu">
+    <%= link_to "Теги", categories_path %> <br>
+  </div>
+  <div class="menu">
+    <%= link_to "Люди", users_path %>
+  </div>
+
+  <div class="tools">
+    <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+  </div>
+
+</div>
+<div class="content_posts">
+  <h1 class="actual">Комментарии</h1>
+  <div class="post_table margin">
+    <p class="table_title">Публикация</p>
+    <p class="table_author">Автор</p>
+    <p class="table_date">Дата</p>
+    <p class="table_active">Текст комментария</p>
+  </div>
+  <!-- .chomp(separator=$/9) -->
+  <div class="comment">
+    <% @comments.each do |comment| %>
+     <div class="comments_container">
+       <p class="table_title">
+       <%= link_to comment.post do %>
+
+         <%= Post.find(comment.post.id).name.slice(0..20) + '..' %>
+       <% end %>
+       </p>
+       <p class="table_author"> <%= User.find(comment.user_id).username %></p>
+       <p class="table_date">   <%= comment.created_at.to_date %></p>
+      <div class="table_comment"> <%= comment.body.html_safe %> </div>
+       <p class="table_delete">
+       <%= link_to  [comment.post, comment],
+                     :confirm => 'Are you sure?',
+                     :method => :delete do%>
+       <%= image_tag 'delete.svg', :class => "icon"  %>
+       </p>
+      <% end %>
+     </div>
+    <% end %>
+  </div>
+</div>
+
+</div>

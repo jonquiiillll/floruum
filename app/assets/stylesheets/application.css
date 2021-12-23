@@ -13,3 +13,76 @@
  *= require_tree .
  *= require_self
  */
+ p {
+   font-size: 18px;
+   line-height: 1.5;
+ }
+ .logo {
+   height: 22px;
+ }
+ .actual {
+   font-weight: 500;
+font-size: 40px;
+ }
+
+ .post_table {
+   width: 100%;
+   background: #F3F3F3;
+   margin-left: -10px;
+   height: 40px;
+   display: flex;
+align-items: center;
+padding-left: 17px;
+ }
+ .table_title {
+   width: 25%;
+   font-weight: 300;
+font-size: 18px;
+ }
+
+ .table_author {
+   width: 10%;
+   font-weight: 300;
+font-size: 18px;
+ }
+ .table_date {
+   width: 13%;font-weight: 300;
+font-size: 18px;
+ }
+ .table_tag {
+   width: 15%;font-weight: 300;
+font-size: 18px;
+ }
+ .table_active {
+   width: 30%;
+   font-weight: 300;
+font-size: 18px;
+display: flex;justify-content: space-between;
+ }
+ .icon {
+   width: 25px;
+   margin-right: 10px;
+ }
+ .top_menu {
+
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 92%;
+   margin: 0 auto;
+   margin-top: 25px;
+   height: 60px;
+   margin-bottom: 40px;
+   background: white;
+
+ }
+ .top_menu a {
+   margin: 0 20px;
+ }
+ @import "@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');";
+ body {
+   font-family: 'Raleway', sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+ }

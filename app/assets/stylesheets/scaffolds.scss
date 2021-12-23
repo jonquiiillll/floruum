@@ -26,8 +26,15 @@ th {
   padding-bottom: 5px; }
 
 td {
-  padding: 0 5px 7px; }
+  padding: 0 5px 7px;
+background: inherit !important;}
 
+input[type=submit] {
+  background: white;
+  border: 1px solid black;
+  width: auto;
+  padding: 10px;
+}
 div.field,
 div.actions {
   margin-bottom: 10px; }
@@ -55,7 +62,10 @@ div.actions {
   margin: -7px -7px 0;
   background-color: #c00;
   color: #fff; }
-
+button {
+  background: inherit;
+  border: white;
+}
 #error_explanation ul li {
   font-size: 12px;
   list-style: square; }

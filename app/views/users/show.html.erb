@@ -1,0 +1,127 @@
+
+<div class="container_body_posts">
+  <div class="side_bar">
+    <div class="menu">
+      <%= link_to "Публикации", posts_path %> <br>
+    </div>
+    <% if user_signed_in? && current_user.isadmin == true %>
+    <div class="menu">
+      <%= link_to "Комментарии", answers_path %>
+    </div>
+    <% end %>
+    <div class="menu">
+      <%= link_to "Теги", categories_path %> <br>
+    </div>
+    <div class="menu">
+      <%= link_to "Люди", users_path %>
+    </div>
+    <div class="tools">
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
+
+  <div class="content_posts">
+   <div class="top_user">
+    <div class="account_user">
+      <div class="avatar_round">
+        <%= image_tag(@user.avatar.url, alt: 'Avatar', :class => "avatar_round") if @user.avatar? %>
+      </div>
+      <div class="user_info">
+
+        <div class="username">
+          <%= @user.username %>
+          <% if user_signed_in? && @user.id == current_user.id %>
+          <%= link_to edit_user_registration_path do %>
+           <%= image_tag 'edit.svg', :class => "icon"  %>
+          <% end %>
+          <%= link_to users_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
+           <%= image_tag 'delete.svg', :class => "icon"  %>
+          <% end %>
+          <% end %>
+        </div>
+
+
+        <div class="id_user">
+            <%= @user.email %>
+            <div class="folo">
+            <p class="folow"> Подписчики <%= @user.followers.count %> </p>
+            <p class="unfol"> Подписки <%= link_to @user.followees.count, following_path %></p>
+            </div>
+            <% if user_signed_in? && @user.id == current_user.id %>
+
+            <% elsif user_signed_in? && current_user.followees.include?(@user) %>
+                <h5><%= button_to "Отписаться", unfollow_user_path, method: "POST" %></h5>
+            <% elsif user_signed_in? %>
+                <h5><%= button_to "Подписаться", follow_user_path, method: "POST"  %></h5>
+            <% else %>
+            <%# можно добавить кнопку для регистрации или что-нибудь ещё  %>
+            <% end%>
+
+        </div>
+      </div>
+    </div>
+   </div>
+  <div class="active_user">
+
+  </div>
+  <div class="container_users_post">
+   <div class="favorite_posts">
+     <div class="count_favorites">
+      <p class="favorite_text">Избранное:
+       <%= @user.favorites.count %>
+     </div>
+     <div class="body_favorites">
+       <% @posts.each do |post| %>
+       <p class="fav"><%= link_to post.name, post %> </p>
+       <% end %>
+     </div>
+   </div>
+
+   <div class="my_posts">
+       <p class="my_text">
+       Публикации пользователя: <%= @user.posts.count %> </p>
+       <% @user.posts.each do |post| %>
+       <div class="my_post">
+         <div class="table_title_my">
+            <%= link_to post.name.length >= 20 ? post.name.slice(0..30) + '..' : post.name, post %>
+        </div>
+        <div class="table_date_my">
+       <%= post.created_at.to_date %>
+       </div>
+         <div class="element_active_table">
+             <%= post.likes.count %>  <%= image_tag 'like.svg', :class => "icon"  %>
+         </div>
+         <div class="element_active_table">
+             <%= post.comments.count %>  <%= image_tag 'comment.svg', :class => "icon"  %>
+         </div>
+           <% if user_signed_in? && @user.id == current_user.id %>
+         <div class="active_buttons_my">
+           <div class="element_active_table_2">
+             <%= link_to edit_post_path(post) do %>
+              <%= image_tag 'edit.svg', :class => "icon"  %>
+             <% end %>
+             </div>
+                 <div class="element_active_table_2">
+             <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <%= image_tag 'delete.svg', :class => "icon"  %>
+             <% end %>
+               </div>
+
+             </div>
+             <% end %>
+         </div>
+       <% end %>
+
+
+
+   </div>
+  </div>
+
+
+
+
+
+
+
+<%= image_tag(@post.image.url, alt: 'Image') if @user.image? %>
+</div></div>

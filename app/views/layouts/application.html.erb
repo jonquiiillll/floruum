@@ -8,12 +8,34 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag Ckeditor.cdn_url %>
   </head>
 
   <body>
-    <% if notice %>
-  <%= notice %>
+
+  <div class="top_menu">
+  <%= link_to posts_path do %>
+  <div class="logo">
+
+ <%= image_tag 'logo.png', :class => "logo"  %>
+
+  </div>
 <% end %>
+  <div class="account">
+    <% if user_signed_in? %>
+    <%= link_to current_user do %>
+     <%= image_tag (current_user.avatar.small_thumb.url), :class => "avatar_round" %>
+    <% end %>
+    <% else %>
+      <%= link_to 'Войти', new_user_session_path %> | <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+    <% end %>
+  </div>
+    <% Category.where(display_in_navbar: true).each do |cat| %>
+<%= link_to cat.name, posts_path(category: cat.name) %> |
+<% end %>
+
+</div>
     <%= yield %>
+
   </body>
 </html>

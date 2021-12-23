@@ -12,23 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <p class="text_new">Название</p>
     <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
   <div>
-	<%= form.label :image %>
-	<%= form.file_field :image %>
+    <p class="text_new">Превью</p>
+  <%= form.file_field :image %>
   </div>
+  <div class="field">
+    <p class="text_new">Статус</p>
+      <%= form.select :category_id, Category.pluck(:name, :id) %>
+  </div>
+  
+
+  <div class="field">
+    <p class="text_new">Контент</p>
+    <%= form.cktext_area :content %>
+  </div>
+
+
 
   <div class="actions">
     <%= form.submit %>

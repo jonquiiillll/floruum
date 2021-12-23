@@ -1,0 +1,61 @@
+
+<div class="container_body_posts">
+  <div class="side_bar">
+    <div class="menu">
+      <%= link_to "Публикации", posts_path %> <br>
+    </div>
+    <% if user_signed_in? && current_user.isadmin == true %>
+    <div class="menu">
+      <%= link_to "Комментарии", answers_path %>
+    </div>
+    <% end %>
+    <div class="menu">
+      <%= link_to "Теги", categories_path %> <br>
+    </div>
+    <div class="menu">
+      <%= link_to "Люди", users_path %>
+    </div>
+    <div class="tools">
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+
+    </div>
+
+  </div>
+  <div class="content_posts">
+<h1>Теги</h1>
+
+
+    <div class="all">
+    <% @categories.each do |category| %>
+
+
+
+       <div class="category_container">
+
+
+
+        <div class="table_title"><%=link_to category.name, category %></div>
+
+         <div class="editing"><%= link_to edit_category_path(category) do %>
+         <%= image_tag 'edit.svg', :class => "icon"  %>
+        <% end %>
+        <%= link_to  category, method: :delete, data: { confirm: 'Are you sure?' } do %>
+         <%= image_tag 'delete.svg', :class => "icon"  %>
+        <% end %>
+        </div>
+
+</div>
+
+    <% end %>
+    </div>
+
+
+
+<br>
+<div class="NewCategory">
+
+
+<%= link_to 'Новый тег', new_category_path %>
+</div>
+</div>
+</div>
