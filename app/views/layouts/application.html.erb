@@ -21,6 +21,7 @@
 
   </div>
 <% end %>
+
   <div class="account">
     <% if user_signed_in? %>
     <%= link_to current_user do %>
@@ -36,6 +37,6 @@
 
 </div>
     <%= yield %>
-
+<%= react_component 'Tests' %>
   </body>
 </html>
