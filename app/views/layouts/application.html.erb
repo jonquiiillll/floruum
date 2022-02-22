@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Florumm</title>
+    <title>Florum</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,12 +12,23 @@
   </head>
 
   <body>
-
   <div class="top_menu">
+
   <%= link_to posts_path do %>
   <div class="logo">
 
  <%= image_tag 'logo.png', :class => "logo"  %>
+
+  </div>
+  <div class="menu">
+    <%= link_to "Вопросы", posts_path %> <br>
+  </div>
+  <div class="right_buttons">
+    <% if user_signed_in?%>
+    <div class="NewPost">
+    <%= link_to 'Новый пост', new_post_path %>
+    </div>
+    <% end %>
 
   </div>
 <% end %>
@@ -31,12 +42,13 @@
       <%= link_to 'Войти', new_user_session_path %> | <%= link_to 'Зарегистрироваться', new_user_registration_path %>
     <% end %>
   </div>
+
     <% Category.where(display_in_navbar: true).each do |cat| %>
 <%= link_to cat.name, posts_path(category: cat.name) %> |
 <% end %>
 
 </div>
     <%= yield %>
-<%= react_component 'Tests' %>
+
   </body>
 </html>
