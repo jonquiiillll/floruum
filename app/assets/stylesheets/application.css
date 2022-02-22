@@ -18,7 +18,11 @@
    line-height: 1.5;
  }
  .logo {
-   height: 22px;
+   height: 19px;
+   margin-right: 30px;
+ }
+ .right_link {
+   margin-right: 20px;
  }
  .actual {
    font-weight: 500;
@@ -26,6 +30,7 @@ font-size: 40px;
  }
 
  .post_table {
+
    width: 100%;
    background: #F3F3F3;
    margin-left: -10px;
@@ -63,13 +68,23 @@ display: flex;justify-content: space-between;
    width: 25px;
    margin-right: 10px;
  }
+ nav {
+   display: flex;
+   justify-content: space-between;
+   height: 77px;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+   padding-left: 100px;
+   padding-right: 100px;
+   align-items: center;
+ }
  .top_menu {
-
-
    display: flex;
    justify-content: space-between;
    align-items: center;
-   width: 92%;
+   width: 800px;
+   /* padding-left: 100px;
+   padding-right: 100px; */
    margin: 0 auto;
    margin-top: 25px;
    height: 60px;

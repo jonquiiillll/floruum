@@ -10,12 +10,21 @@ body {
   display: flex;
   border-bottom: 1px solid #EBEBEB;
 }
+.left_buttons {
+  display: flex;
+  align-items: center;
+}
+.right_section_navbar {
+  display: flex;
+font-style: normal;
+font-weight: 500;
+font-size: 19px;
+}
 .fav {
   margin-bottom: 10px;
 }
 .avatar_round {
   border-radius: 50px;
-  margin-top: -12px;
 }
 .username {
   font-size: 40px;
@@ -511,11 +520,12 @@ a {
 //   color: black !important;
 // }
 .NewPost {
-  width: 127px;
-  height: 37px;
-  border: 1px solid black;
-  background: white;
-  border-radius: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 36px;
+  color: white;
+  background: #738A5F;
+  border-radius: 8px;
   align-items: center;
   justify-content: center;
   display: flex;
