@@ -1,13 +1,44 @@
 
 <div class="container_body_posts">
+  <div class="side_bar">
+    <div class="menu">
+      <%= link_to "Публикации", posts_path %> <br>
+    </div>
+    <% if user_signed_in? && current_user.isadmin == true %>
+    <div class="menu">
+      <%= link_to "Комментарии", answers_path %>
+    </div>
+    <% end %>
+    <div class="menu">
+      <%= link_to "Теги", categories_path %> <br>
+    </div>
+    <div class="menu">
+      <%= link_to "Люди", users_path %>
+    </div>
+
+    <div class="tools">
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+
+    </div>
+  </div>
   <div class="content_posts">
     <div class="buttons">
+      <h1 class="actual">Публикации</h1>
       <% if notice %>
       <p class="notice"><%= notice %></p>
       <% elsif alert %>
       <p class="alert"><%= alert %></p>
       <% end %>
           <%= yield %>
+
+      <div class="right_buttons">
+        <% if user_signed_in?%>
+        <div class="NewPost">
+        <%= link_to 'Новый пост', new_post_path %>
+        </div>
+        <% end %>
+
+      </div>
     </div>
     <div class="categories">
       <div class="all_posts">
@@ -20,50 +51,52 @@
   </div>
 <% end %>
     </div>
-
+     <div class="post_table">
+      <p class="table_author"></p>
+      <p class="table_title">Название</p>
+      <p class="table_date">Дата</p>
+      <p class="table_tag">Статус</p>
+      <p class="table_active">Активность</p>
+    </div>
 
     <div class="container_content">
       <div class="container_posts">
     <% @posts.each do |post| %>
 
     <div class="window">
-        <div class="preview">
-          <%= image_tag(post.image.url, alt: 'Image') if post.image? %>
-          <div class="title_preview">
-            <%= link_to post.name.length >= 40 ? post.name.slice(0..40) + '...' : post.name, post, :class => "title_preview"%>
-          </div>
-       </div>
-          <%= link_to(image_tag(post.user.avatar.small_thumb.url, alt: 'Avatar', :class => "avatar_round"), post.user) if post.user.avatar? %>
-
-          <div class="table_date">
-          <%= post.created_at.to_date %>
-          </div>
-          <div class="table_tag">
-            <td><%= post.category.name %></td>
-          </div>
-          <div class="active">
-          <div class="element_active_table">
-            <%= post.likes.count %>  <%= image_tag 'like.svg', :class => "icon"  %>
-          </div>
-          <div class="element_active_table">
-            <%= post.comments.count %>  <%= image_tag 'comment.svg', :class => "icon"  %>
-          </div>
-          </div>
-
-
       <div class="table_author">
+        <div class="user_name">
+
+          <%= link_to(image_tag(post.user.avatar.small_thumb.url, alt: 'Avatar', :class => "avatar_round"), post.user) if post.user.avatar? %>
+        </div>
       </div>
 <div class="table_title">
     <%= link_to post do %>
-
+      <div class="title">
+        <%= link_to post.name.length >= 20 ? post.name.slice(0..20) + '..' : post.name, post %>
+      </div>
 <% end %>
 </div>
 
+<div class="table_date">
+<%= post.created_at.to_date %>
+</div>
 
+<div class="table_tag">
+  <td><%= post.category.name %></td>
 
-
+</div>
 <div class="table_active">
+  <div class="active">
 
+
+<div class="element_active_table">
+    <%= post.likes.count %>  <%= image_tag 'like.svg', :class => "icon"  %>
+</div>
+<div class="element_active_table">
+    <%= post.comments.count %>  <%= image_tag 'comment.svg', :class => "icon"  %>
+</div>
+</div>
 
 
 <% if user_signed_in? && post.user_id == current_user.id %>
