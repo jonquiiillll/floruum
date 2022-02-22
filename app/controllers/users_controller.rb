@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @comments = Comment.all
+    render component: 'Users', props: { users: @users }
+    respond_to do |format|
+      format.html  # index.html.erb
+      format.json  { render :json => @users }
+    end
+
   end
 
   def show

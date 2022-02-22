@@ -117,4 +117,5 @@ ActiveRecord::Schema.define(version: 2021_12_16_190935) do
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
+  add_foreign_key "posts", "images"
 end
