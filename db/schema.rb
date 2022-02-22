@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_190935) do
+ActiveRecord::Schema.define(version: 2022_02_22_143726) do
 
   create_table "answers", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -20,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_12_16_190935) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "user_id", null: false
     t.boolean "display_in_navbar", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -102,7 +109,7 @@ ActiveRecord::Schema.define(version: 2021_12_16_190935) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
-
+    t.string "image"
     t.boolean "isadmin", default: false
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -117,5 +124,4 @@ ActiveRecord::Schema.define(version: 2021_12_16_190935) do
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
-  add_foreign_key "posts", "images"
 end

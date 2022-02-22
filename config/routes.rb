@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   resources :follows
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
@@ -10,14 +11,15 @@ Rails.application.routes.draw do
 
   resources :subscribers
 
+  get 'articles', to: 'articles#index'
   get 'promo', to: 'promo#index'
   get 'answers', to: 'answers#index'
-    get 'status', to: 'status#index'
+  get 'status', to: 'status#index'
   get 'about', to: 'about#index'
   get 'posts', to: 'posts#index'
   get 'users/:id/following', :to => "users#following", :as => :following
 
-  root 'posts#index'
+  root 'articles#index'
 
 resources :posts do
 	resources :comments
