@@ -34,6 +34,9 @@ end
 version :small_thumb, from_version: :thumb do
   process resize_to_fill: [36, 36]
 end
+version :question_thumb, from_version: :thumb do
+  process resize_to_fill: [25, 25]
+end
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [10, 10]
