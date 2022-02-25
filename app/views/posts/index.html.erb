@@ -11,8 +11,6 @@
     </div>
     <div class="categories">
       <div class="all_posts">
-
-
 <%= link_to 'Все', posts_path %> </div>
 <% Category.all.each do |cat| %>
    <div class="cat">
@@ -20,80 +18,49 @@
   </div>
 <% end %>
     </div>
-
-
     <div class="container_content">
       <div class="container_posts">
     <% @posts.each do |post| %>
 
     <div class="window">
-        <div class="preview">
-          <%= image_tag(post.image.url, alt: 'Image') if post.image? %>
-          <div class="title_preview">
-            <%= link_to post.name.length >= 40 ? post.name.slice(0..40) + '...' : post.name, post, :class => "title_preview"%>
+        <div class="preview" style='background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(<%= post.image.url %>); background-size: cover !important;' >
+          <div class="top_of_answer">
+            <div class="table_tag">
+              <td><%= post.category.name %></td>
+            </div>
           </div>
-       </div>
-          <%= link_to(image_tag(post.user.avatar.small_thumb.url, alt: 'Avatar', :class => "avatar_round"), post.user) if post.user.avatar? %>
-
-          <div class="table_date">
-          <%= post.created_at.to_date %>
+          <div class="bottom_of_answer">
+            <div class="main_information">
+              <%= link_to post.name.length >= 40 ? post.name.slice(0..40) + '...' : post.name, post, :class => "title_of_answer"%>
+            </div>
+            <div class="user_info">
+              <%= link_to(image_tag(post.user.avatar.question_thumb.url, alt: 'Avatar', :class => "avatar_round avatar_post"), post.user) if post.user.avatar? %>
+              <%= post.user.username %> •
+              <%= time_ago_in_words(post.created_at)%>
+            </div>
           </div>
-          <div class="table_tag">
-            <td><%= post.category.name %></td>
-          </div>
+        </div>
           <div class="active">
           <div class="element_active_table">
-            <%= post.likes.count %>  <%= image_tag 'like.svg', :class => "icon"  %>
+            <%= link_to post.content.html_safe.length >= 10 ? post.content.slice(0..200) + '...' : post.content.html_safe, post, :class => "content_of_answer"%>
           </div>
-          <div class="element_active_table">
-            <%= post.comments.count %>  <%= image_tag 'comment.svg', :class => "icon"  %>
+          <hr>
+          <div class="active_buttons_post">
+            <div class="commentes">
+              <%= image_tag 'Group.svg', :class => "icon"  %>
+              <div class="count_comments"><%= post.comments.count %>
+              </div>
+            </div>
+            <%= link_to post do %>
+            <div class="doing_answer">
+             <%= image_tag 'Action_answer.svg', :class => "icon"  %> <p>Ответить</p>
+            </div>
+            <% end %>
           </div>
           </div>
-
-
-      <div class="table_author">
-      </div>
-<div class="table_title">
-    <%= link_to post do %>
-
-<% end %>
-</div>
-
-
-
-
-<div class="table_active">
-
-
-
-<% if user_signed_in? && post.user_id == current_user.id %>
-  <div class="active_buttons">
-    <div class="element_active_table_2">
-      <%= link_to edit_post_path(post) do %>
-       <%= image_tag 'edit.svg', :class => "icon"  %>
-      <% end %>
-      </div>
-          <div class="element_active_table_2">
-      <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
-       <%= image_tag 'delete.svg', :class => "icon"  %>
-      <% end %>
-        </div>
-
-      </div>
-        <% end %>
-
-</div>
-
-    </div>
-
-
-
-
-    <% end %>
-    </div>
-      </div>
-    <br>
-
-  </div>
-
-</div>
+          </div>
+         <% end %>
+         </div>
+         </div>
+         </div>
+         </div>
