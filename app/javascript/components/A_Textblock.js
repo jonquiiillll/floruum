@@ -4,9 +4,9 @@ import PropTypes from "prop-types"
 class A_textblock extends React.Component {
   render () {
     return (
-      <p>
-        A_textblock
-      </p>
+      <div>
+     <p> абоба </p>
+      </div>
     );
   }
 }

@@ -23,19 +23,10 @@
   </div>
   <div class="content_posts">
 <h1>Теги</h1>
-
-
     <div class="all">
     <% @categories.each do |category| %>
-
-
-
        <div class="category_container">
-
-
-
         <div class="table_title"><%=link_to category.name, category %></div>
-
          <div class="editing"><%= link_to edit_category_path(category) do %>
          <%= image_tag 'edit.svg', :class => "icon"  %>
         <% end %>
