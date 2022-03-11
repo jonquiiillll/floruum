@@ -1,0 +1,50 @@
+.category {
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+.category:hover{
+  color: var(--color-sea-foam);
+  background-color: var(--color-black);
+  transition: all .2s linear;
+}
+.category.activeTab{
+  color: var(--color-sea-foam);
+  background-color: var(--color-black);
+}
+
+.category--default{
+  color: var(--color-black);
+  background-color: var(--color-sea-foam);
+}
+.category--active{
+  color: #fff;
+  background-color: #101010;
+}
+.category--inPost{
+  color: #101010;
+  background-color: #fff;
+}
+.category--inArticle{
+  color: #101010;
+  background-color: #fff;
+}
+.default{
+  color: var(--color-black-sand);
+  background-color: var(--color-sea-foam);
+  padding: 8px 24px 8px 24px;
+}
+.default:hover{
+  color: var(--color-black-sand);
+  background-color: var(--color-sea-foam);
+}
+
+@media (max-width: 768px) {
+  .category {
+    margin-right: 2vw;
+  }
+}

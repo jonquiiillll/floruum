@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+
   # GET /categories/1 or /categories/1.json
   def show
   end
