@@ -7,36 +7,18 @@
     <%= csp_meta_tag %>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-</style>
+    </style>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag Ckeditor.cdn_url %>
   </head>
   <body>
-    <%# <%= react_component 'O_Header', {categories: @categories, category: @category } %> %>
+  <%= react_component 'O_Header' %>
 
-  <nav>
-  <div class="right_section_navbar">
-    <div class="logo">
-      <%= link_to posts_path do %>
-      <%= image_tag 'logo.png', :class => "logo"  %>
-      <% end %>
-    </div>
-    <div class="right_links">
-      <%= link_to posts_path do %>
-        <%= link_to "Вопросы", posts_path, :class => "right_link" %>
-        <% end %>
-        <%= link_to articles_path do %>
-        <%= link_to "Наши статьи", articles_path %>
-      <% end %>
-    </div>
-  </div>
-  <div class="left_buttons">
-    <div class="right_buttons">
+
+    <!-- <div class="right_buttons">
      <% if user_signed_in?%>
-       <div class="NewPost">
-         <%= link_to 'Задать вопрос', new_post_path, :class => "white"  %>
-       </div>
+           <%= react_component 'A_Button'%>
      <% end %>
     </div>
     <div class="account">
@@ -49,7 +31,7 @@
      <% end %>
     </div>
   </div>
-  </nav>
+  </nav>  -->
 
     <%= yield %>
 
