@@ -23,6 +23,7 @@
   </div>
   <div class="content_posts">
 <h1>Теги</h1>
+      <%= react_component 'M_QuestionCard', { category: @category } %>
     <div class="all">
     <% @categories.each do |category| %>
        <div class="category_container">
