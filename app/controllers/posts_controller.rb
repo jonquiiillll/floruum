@@ -6,12 +6,13 @@ class PostsController < ApplicationController
   def index
       @categories = Category.all
       @users = User.all
-      if params.has_key?(:category)
-        @category = Category.find_by_name(params[:category])
-        @posts = Post.where(category: @category)
-      else
-        @posts = Post.all
-      end
+      @posts = Post.all
+      # if params.has_key?(:category)
+      #   @category = Category.find_by_name(params[:category])
+      #   @posts = Post.where(category: @category)
+      # else
+      #   @posts = Post.all
+      # end
     end
 
   # GET /posts/1 or /posts/1.json

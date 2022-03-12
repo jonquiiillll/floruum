@@ -218,6 +218,7 @@ margin-left: -29px;
 }
 .container_body_posts {
   width: 92%;
+  margin-top: 80px !important;
 
   display: flex;
     margin: 0 auto;
@@ -534,7 +535,6 @@ justify-content: flex-end;
   height: 220px;
   border-radius: 10px;
   position: relative;
-  background-image: url('post.image.url');
 }
 .bottom_of_answer {
   bottom: 0px;
