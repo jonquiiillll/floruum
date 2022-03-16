@@ -7,17 +7,17 @@ class PostsController < ApplicationController
       @categories = Category.all
       @users = User.all
       @posts = Post.all
-      # if params.has_key?(:category)
-      #   @category = Category.find_by_name(params[:category])
-      #   @posts = Post.where(category: @category)
-      # else
-      #   @posts = Post.all
-      # end
+      if params.has_key?(:category)
+        @category = Category.find_by_name(params[:category])
+        @posts = Post.where(category: @category)
+      else
+        @posts = Post.all
+      end
     end
 
   # GET /posts/1 or /posts/1.json
   def show
-
+    @categories = Category.all
   end
 
   # GET /posts/new
