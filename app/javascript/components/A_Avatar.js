@@ -1,22 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-
-
+var UserPic = require('../../assets/images/logo.png');
 
 export class A_Avatar extends React.Component {
   render () {
     return (
       <div>
-       <a className="category_content" key={this.props.user}>
-           <p>{this.props.user.id}</p>
-       </a>
-
+        <a href={`/users/${user.current_user.id}`}> <img className="logo" src={UserPic}/> </a>
       </div>
     );
   }
 }
-A_Avatar.propTypes = {
-  current_user: PropTypes.array
-};
+
 export default A_Avatar

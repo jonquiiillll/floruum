@@ -8,7 +8,7 @@ export class A_Logo extends React.Component {
   render () {
     return (
       <div>
-      <a href="\posts">  <img className="logo" src={Logotype}/> </a>
+      <a href="\promo">  <img className="logo" src={Logotype}/> </a>
       </div>
     );
   }

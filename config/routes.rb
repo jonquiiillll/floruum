@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'posts', to: 'posts#index'
   get 'users/:id/following', :to => "users#following", :as => :following
 
-  root 'articles#index'
+  root 'promo#index'
 
 resources :posts do
 	resources :comments

@@ -1,25 +1,6 @@
 
-<div class="container_body_show">
-  <div class="side_bar">
-    <div class="menu">
-      <%= link_to "Публикации", posts_path %> <br>
-    </div>
-    <% if user_signed_in? && current_user.isadmin == true %>
-    <div class="menu">
-      <%= link_to "Комментарии", answers_path %>
-    </div>
-    <% end %>
-    <div class="menu">
-      <%= link_to "Теги", categories_path %> <br>
-    </div>
-    <div class="menu">
-      <%= link_to "Люди", users_path %>
-    </div>
-    <div class="tools">
-      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+<div class="content_posts">
 
-    </div>
-  </div>
   <div class="content_posts_show">
   <div class="">
     <div class="images">
@@ -65,7 +46,7 @@
   <strong></strong>
   <div class="category">
 
-
+  <%= react_component 'A_Category', {category: @category, post: @post } %>
   <%= @post.category.name %>
   </div>
 

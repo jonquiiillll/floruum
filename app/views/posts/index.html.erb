@@ -3,7 +3,7 @@
   <div class="content_posts">
     <div class="container_content">
 
-      <%= react_component 'M_QuestionCard', {posts: @posts, categories: @categories } %>
+      <%= react_component 'M_QuestionCard', {posts: @posts, category: @category } %>
 
       <div class="container_posts">
     <% @posts.each do |post| %>
