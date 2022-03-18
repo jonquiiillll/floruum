@@ -600,6 +600,15 @@ justify-content: flex-end;
 .margin {
   margin-top: 100px;
 }
+.bottom_question {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+.active_header {
+  display: flex;
+  align-items: center;
+}
 .preview {
   height: 220px;
   border-radius: 10px;

@@ -9,15 +9,17 @@ import A_PostUser from "./A_PostUser.js"
 
 class M_QuestionCard extends React.Component {
   render () {
+
     return (
   <div>
-      {this.props.posts.map(post => (
+      {this.props.posts.slice(0,2).map(post => (
     <a href={`/posts/${post.id}`}>
       <div className="window" key={post.id} >
         <div className="preview" style={{backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(${post.image.url})` }}>
-            <A_PostDate
-                date = {post.created_at}>
-            </A_PostDate>
+            <div className="top_question">
+            <p className="black" dangerouslySetInnerHTML={{__html: `${post.category.name}` }}></p>
+             </div>
+            <div className="bottom_question">
 
             <A_PostTitle style="title--white"
                 title = {post.name}>
@@ -25,14 +27,15 @@ class M_QuestionCard extends React.Component {
 
             <A_PostUser
                 username = {post.user.username}
-                avatar = {post.user.avatar.small_thumb.url}>
+                avatar = {post.user.avatar.small_thumb.url}
+                date = {post.created_at}>
             </A_PostUser>
+            </div>
         </div>
             <A_PostContent style="content--grey"
-              text = {post.content}/>
+              text = {post.content.slice(0,20)}/>
       </div>
-      <p>{post.comments.count}</p>
-      <p className="black" dangerouslySetInnerHTML={{__html: `${post.category.name}` }}></p>
+      <p></p>
     </a>
     ))}
 

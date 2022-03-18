@@ -6,12 +6,13 @@ const A_PostUser = ({
   link,
   style,
   username,
-  avatar
+  avatar,
+  date
 }) => {
     return (
       <div className="userinfo">
       <img src={`${avatar}`}/>
-        <a href={link}>{username} </a>
+        <a href={link}>{username} {date} </a>
       </div>
     );
   }

@@ -4,7 +4,6 @@ import A_Logo from "./A_Logo.js"
 import A_Button from "./A_Button.js"
 import A_Avatar from "./A_Avatar.js"
 
-var UserPic = require('../../assets/images/account_image.svg');
 
 class O_Header extends React.Component {
   render () {
@@ -18,7 +17,13 @@ class O_Header extends React.Component {
           <a href="\articles" className="black" >Статьи</a>
         </div>
       </div>
+      <div className="active_header">
         <A_Button link = {'posts/new'} type = {"NewPost white"} content = {'Задать вопрос'}/>
+        <A_Avatar
+            link = {this.props.current_user.id}
+            avatar = {this.props.current_user.avatar.small_thumb.url}>
+        </A_Avatar>
+      </div>
       </nav>
       </div>
     );
