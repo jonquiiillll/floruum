@@ -6,12 +6,14 @@ class PostsController < ApplicationController
   def index
       @categories = Category.all
       @users = User.all
-      @posts = Post.all
       if params.has_key?(:category)
         @category = Category.find_by_name(params[:category])
-        @posts = Post.where(category: @category)
+        @posts = Post.where(category: @category, user: @user)
       else
-        @posts = Post.all
+        @posts = Post.all.includes(:category, :user, :comments, :likes, :favorites).map do
+      |post|
+      post.as_json(include: [:category, :user, :comments, :image])
+    end
       end
     end
 

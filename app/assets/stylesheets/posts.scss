@@ -672,6 +672,10 @@ object-fit: cover !important;
 .show {
   width: 70%;
 }
+.userinfo {
+  display: flex;
+  align-items: center;
+}
 #post_title {
   width: 100%;
   height: 46px;

@@ -15,7 +15,6 @@ class O_PostView extends React.Component {
       <A_PostTitle style="title--black"
           title = {this.props.post.name}>
       </A_PostTitle>
-
       <A_PostContent style="content--black"
           text = {this.props.post.content}>
       </A_PostContent>
