@@ -8,7 +8,7 @@ catStyle
 }) => {
 
   return (
-    <a className = "category" href={`/posts?category=${category}`}>{textpart}</a>
+    <a className = "category" href={`/post?category=${category}`}>{textpart}</a>
   );
 }
 

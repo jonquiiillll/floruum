@@ -1,12 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+const STYLES = [
+  'content--black',
+  'content--grey',
+]
+
 const A_PostContent = ({
-text
+text,
+style,
 }) => {
+
+  const checkStyles = STYLES.includes(style)
+    ? style : STYLES[0]
+
     return (
-      <div className="element_active_table">
-        <p className="content_of_answer" dangerouslySetInnerHTML={{__html: `${text}` }}></p>
+      <div>
+        <p className = {`content ${checkStyles}`} dangerouslySetInnerHTML={{__html: `${text}` }}></p>
       </div>
     );
 }

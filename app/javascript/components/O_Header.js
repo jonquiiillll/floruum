@@ -4,6 +4,8 @@ import A_Logo from "./A_Logo.js"
 import A_Button from "./A_Button.js"
 import A_Avatar from "./A_Avatar.js"
 
+var UserPic = require('../../assets/images/account_image.svg');
+
 class O_Header extends React.Component {
   render () {
     return (

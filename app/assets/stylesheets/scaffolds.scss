@@ -7,12 +7,10 @@ body {
 
 p {
   font-size: 18px;
-  color: #62636B;
 }
 
 body, p, ol, ul, td {
   font-size: 18px;
-  color: #62636B;
 }
 
 pre {
@@ -35,10 +33,32 @@ td {
 background: inherit !important;}
 
 input[type=submit] {
-  background: white;
-  border: 1px solid black;
+  background: #738A5F;
+  border: 1px solid #E0E0E0;
+  color: white;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 20px;
   width: auto;
+  padding: 10px 43px 10px 43px;
+}
+::placeholder {
+  color: #C5C1C1;
+}
+input[type=text] {
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all .3s;
   padding: 10px;
+}
+input[type=text]:hover {
+  border: 1px solid #738A5F;
+  transition: all .3s;
+}
+input[type=text]:focus {
+  border: 2px solid #738A5F;
 }
 div.field,
 div.actions {

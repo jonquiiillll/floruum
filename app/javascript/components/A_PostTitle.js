@@ -1,13 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+const STYLES = [
+  'title--black',
+  'title--white',
+]
 
 const A_PostTitle = ({
-title
+title,
+style,
 }) => {
+
+  const checkStyles = STYLES.includes(style)
+    ? style : STYLES[0]
+
     return (
-      <div className="bottom_of_answer">
-      <p className="title_of_answer" >
+      <div>
+      <p className = {`title ${checkStyles}`}>
        {title}</p>
        </div>
     );

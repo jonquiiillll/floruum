@@ -1,59 +1,20 @@
+<div class="content_posts_show">
+  <div class="content_posts show">
 
-<div class="content_posts">
-
-  <div class="content_posts_show">
-  <div class="">
-    <div class="images">
-    <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
-    </div>
-
-    <div class="comment_tools">
-      <%= link_to 'Назад', posts_path %>
-      <div class="tools_edit">
-
-      <% if user_signed_in? && @post.user.id == current_user.id %>
-    <%= link_to edit_post_path do %>
-     <%= image_tag 'edit.svg', :class => "icon"  %>
-    <% end %>
-    <%= link_to @post, method: :delete, data: { confirm: 'Are you sure?' } do %>
-     <%= image_tag 'delete.svg', :class => "icon"  %>
-    <% end %>
-      <% end %>
-
-      </div>
-    </div>
-  </div>
-<div class="title_box">
-
-  <p class="Title_show">
-
-    <strong></strong>
-    <%= @post.name %>
-  </p>
-
-
-
-
-
-</div>
-
-
+    <%= react_component 'O_PostView', { post: @post, category: @category} %>
 <p class="author">
   <strong></strong>
   <%= @post.title %>
 </p>
 <p>
   <strong></strong>
-  <div class="category">
+  <div class="">
 
-  <%= react_component 'A_Category', {category: @category, post: @post } %>
   <%= @post.category.name %>
   </div>
 
 <div class="content_text_show">
-  <p>
-    <%= @post.content.html_safe %>
-  </p>
+
 
 <div class="likes">
 
