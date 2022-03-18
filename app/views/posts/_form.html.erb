@@ -10,29 +10,29 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <p class="text_new">Название</p>
-    <%= form.text_field :name %>
-  </div>
+  <div class="new_post">
+<div class="left_new_post">
+  <%= react_component 'O_Postform', { post: @post, categories: @categories } %>
   <div>
     <p class="text_new">Превью</p>
   <%= form.file_field :image %>
   </div>
-  <div class="field">
-    <p class="text_new">Статус</p>
-      <%= form.select :category_id, Category.pluck(:name, :id) %>
-  </div>
-  
 
   <div class="field">
     <p class="text_new">Контент</p>
     <%= form.cktext_area :content %>
   </div>
 
-
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit value="Опубликовать" %>
   </div>
+  </div>
+  <div class="right_new_post">
+    <div class="field">
+      <p class="text_new">Категория</p>
+        <%= form.select :category_id, Category.pluck(:name, :id) %>
+    </div>
+  </div>
+    </div>
+
 <% end %>

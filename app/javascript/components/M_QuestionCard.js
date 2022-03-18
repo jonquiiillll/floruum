@@ -19,12 +19,12 @@ class M_QuestionCard extends React.Component {
                 date = {post.created_at}>
             </A_PostDate>
 
-            <A_PostTitle
+            <A_PostTitle style="title--white"
                 title = {post.name}>
             </A_PostTitle>
 
         </div>
-            <A_PostContent className="element_active_table"
+            <A_PostContent style="content--grey"
               text = {post.content}/>
       </div>
     </a>
