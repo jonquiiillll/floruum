@@ -1,11 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-class A_Article2Column extends React.Component {
+
+class A_ArticleCard extends React.Component {
   render () {
     return (
-      
+
     );
   }
 }
 
-export default A_Article2Column
+export default A_ArticleCard

@@ -593,10 +593,41 @@ justify-content: flex-end;
   justify-content: space-between;
 }
 .all {
-
   display: flex;
 }
-.edin
+.preview {
+  padding-top: 5px;
+}
+.Category--shadow {
+  box-shadow: 0px 4px 4px rgba(0.05, 0.05, 0.05, 0.05);
+  border-radius: 27px;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 7px 20px 7px 20px;
+}
+.top_question {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.Category--default {
+  background: white;
+  border-radius: 27px;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 7px 20px 7px 20px;
+}
+.User--white {
+  color: white;
+}
+.User--black {
+  color: #989898;
+  font-weight: 400;
+  font-size: 16px;
+}
 .margin {
   margin-top: 100px;
 }
@@ -633,7 +664,7 @@ justify-content: flex-end;
 }
 .content--black {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 21px;
   color: black;
 }
@@ -643,12 +674,13 @@ justify-content: flex-end;
   color: #62636B;
 }
 .post_view {
+  padding-bottom: 15px;
   background: white;
   border-radius:0px 0px 11px 11px;
 }
 .title--black {
   color: black;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 30px;
 }
 .title--white {
@@ -657,6 +689,7 @@ justify-content: flex-end;
   font-size: 26px;
 }
 .post_image {
+  margin-bottom: 10px;
 border-radius: 29px 29px 0px 0px;
 height: 336.03px;
 width: 100%;

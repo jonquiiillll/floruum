@@ -15,8 +15,7 @@ style,
     ? style : STYLES[0]
 
     return (
-      <div>
-        <p className = {`content ${checkStyles}`} dangerouslySetInnerHTML={{__html: `${text}` }}></p>
+      <div className = {`${checkStyles}`} dangerouslySetInnerHTML={{__html: `${text}` }}>
       </div>
     );
 }

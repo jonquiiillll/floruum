@@ -10,7 +10,7 @@ class PostsController < ApplicationController
         @category = Category.find_by_name(params[:category])
         @posts = Post.where(category: @category, user: @user)
       else
-        @posts = Post.all.includes(:category, :user, :comments, :likes, :favorites).map do
+        @posts = Post.all.includes(:category, :user, :likes, :favorites).map do
       |post|
       post.as_json(include: [:category, :user, :comments, :image])
     end
@@ -20,6 +20,12 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @categories = Category.all
+    if params.has_key?(:category)
+       @category = Category.find(@post.category_id)
+       @posts = Post.where(category: @category, user: @user)
+    end
+    @category = Category.find(@post.category_id)
+    @user = User.find(@post.user_id)
   end
 
   # GET /posts/new
@@ -77,6 +83,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :title, :content, :author, :image, :category_id, :category_name)
+      params.require(:post).permit(:name, :title, :content, :user, :author, :image, :category_id, :category_name)
     end
 end

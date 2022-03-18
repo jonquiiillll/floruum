@@ -9,7 +9,6 @@ import A_PostUser from "./A_PostUser.js"
 
 class M_QuestionCard extends React.Component {
   render () {
-
     return (
   <div>
       {this.props.posts.slice(0,2).map(post => (
@@ -17,8 +16,13 @@ class M_QuestionCard extends React.Component {
       <div className="window" key={post.id} >
         <div className="preview" style={{backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(${post.image.url})` }}>
             <div className="top_question">
-            <p className="black" dangerouslySetInnerHTML={{__html: `${post.category.name}` }}></p>
-             </div>
+
+            <A_Category
+              style="Category--default"
+              textpart = {{__html: `${post.category.name}`}}>
+            </A_Category>
+            
+            </div>
             <div className="bottom_question">
 
             <A_PostTitle style="title--white"
@@ -30,12 +34,12 @@ class M_QuestionCard extends React.Component {
                 avatar = {post.user.avatar.small_thumb.url}
                 date = {post.created_at}>
             </A_PostUser>
+
             </div>
-        </div>
-            <A_PostContent style="content--grey"
-              text = {post.content.slice(0,20)}/>
       </div>
-      <p></p>
+            <A_PostContent style="content--grey"
+              text = {post.content.slice(0, 20)}/>
+      </div>
     </a>
     ))}
 
