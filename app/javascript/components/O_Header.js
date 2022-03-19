@@ -18,7 +18,7 @@ class O_Header extends React.Component {
         </div>
       </div>
       <div className="active_header">
-        <A_Button link = {'posts/new'} type = {"NewPost white"} content = {'Задать вопрос'}/>
+        <A_Button link = {'posts/new'} color="white button--default" content = {'Задать вопрос'}/>
         <A_Avatar
             link = {this.props.current_user.id}
             avatar = {this.props.current_user.avatar.small_thumb.url}>

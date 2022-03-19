@@ -5,11 +5,15 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
     @hashtags = Hashtag.all
+    @users = User.all
     if params.has_key?(:hashtag)
-      @category = Hashtag.find_by_name(params[:hashtag])
-      @posts = Article.where(hashtag: @hashtag)
+      @hashtag = Hashtag.find_by_name(params[:hashtag])
+      @articles = Article.where(hashtag: @hashtag, user: @user)
     else
-      @posts = Article.all
+      @articles = Article.all.includes(:hashtag).map do
+    |post|
+    post.as_json(include: [:hashtag, :article_comments, :preview])
+  end
     end
   end
 
