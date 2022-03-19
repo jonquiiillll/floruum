@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hashtag.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hashtag.description %>
+</p>
+
+<p>
+  <strong>Display in navbar:</strong>
+  <%= @hashtag.display_in_navbar %>
+</p>
+
+<%= link_to 'Edit', edit_hashtag_path(@hashtag) %> |
+<%= link_to 'Back', hashtags_path %>

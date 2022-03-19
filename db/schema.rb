@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_143726) do
+ActiveRecord::Schema.define(version: 2022_03_19_091833) do
 
   create_table "answers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "article_comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "article_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_article_comments_on_article_id"
   end
 
   create_table "articles", force: :cascade do |t|
@@ -23,6 +32,9 @@ ActiveRecord::Schema.define(version: 2022_02_22_143726) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "preview"
+    t.integer "hashtag_id", null: false
+    t.index ["hashtag_id"], name: "index_articles_on_hashtag_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -66,6 +78,14 @@ ActiveRecord::Schema.define(version: 2022_02_22_143726) do
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followee_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "display_in_navbar", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -116,6 +136,8 @@ ActiveRecord::Schema.define(version: 2022_02_22_143726) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "article_comments", "articles"
+  add_foreign_key "articles", "hashtags"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
@@ -123,6 +145,5 @@ ActiveRecord::Schema.define(version: 2022_02_22_143726) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "categories"
-  add_foreign_key "categories", "posts"
   add_foreign_key "posts", "users"
 end

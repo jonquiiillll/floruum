@@ -1,62 +1,7 @@
 <div class="content_posts_show">
   <div class="content_posts show">
-
-    <%= react_component 'O_PostView', { post: @post, category: @category} %>
-<p class="author">
-  <strong></strong>
-  <%= @post.title %>
-</p>
-<p>
-  <strong></strong>
-  <div class="">
-
-  <%= @post.category.name %>
-  </div>
-
-<div class="content_text_show">
-
-
-<div class="likes">
-
-<div class="likes_butt">
-
-
-<p><%= @post.likes.count %> </p>
-
-
-<% if user_signed_in? %>
-  <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-  <% if pre_like %>
-  <%= button_to post_like_path(@post, pre_like), method: :delete do%>
-	<div class="icon">
- <%= image_tag 'like.svg', :class => "icon"  %>
-	</div>
-<% end %>
-  <% else %>
-
-  <%= button_to post_likes_path(@post), method: :post do%>
-	<div class="icon">
- <%= image_tag 'like.svg', :class => "icon"  %>
-	</div>
-<% end %> <% end %>
-<% end %>
-<div class="favorite">
-
-
-<% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
-<% if pre_favorite %>
-    <%= button_to 'Удалить из избранного', post_favorite_path(@post, pre_favorite), method: :delete %>
-<% else %>
-    <%= button_to 'Добавить в избранное', post_favorites_path(@post), method: :post %>
-<% end %>
-</div>
-
-</div>
-  <%= @post.user.username %>
-</div>
-</div>
-
-<h2 class="answer">Комментарии:</h2>
+    <%= react_component 'O_PostView', { post: @post, user: @user, category: @category} %>
+    <h2 class="answer">Комментарии:</h2>
 <%= render @post.comments %>
 
 <h2>Добавить комментарий:</h2>
@@ -66,6 +11,5 @@
 <% else %>
 <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
 <% end %>
-
-
+  </div>
 </div>

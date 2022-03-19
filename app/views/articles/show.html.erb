@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= image_tag(@article.preview.url, alt: 'Preview') if @article.preview? %>
 <p>
   <strong>Name:</strong>
   <%= @article.name %>
@@ -11,9 +11,21 @@
 </p>
 
 <p>
+  <strong>Hashtag:</strong>
+  <%= @article.hashtag.name %>
+</p>
+
+<p>
   <strong>Content:</strong>
   <%= @article.content %>
 </p>
+
+<h2>Comments</h2>
+<h2>Comments</h2>
+<%= render @article.article_comments %>
+
+<h2>Add a comment:</h2>
+<%= render "article_comments/form" %>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
