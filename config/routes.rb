@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :articles do
-    resources :article_comments
-  end
+
+  resources :hashtags
   resources :follows
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
@@ -27,6 +26,10 @@ resources :posts do
 	resources :comments
   resources :likes
   resources :favorites
+end
+
+resources :articles do
+  resources :article_comments
 end
 
 resources :answers do

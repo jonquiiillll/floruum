@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_18_161716) do
+ActiveRecord::Schema.define(version: 2022_03_19_091833) do
 
   create_table "answers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 2022_03_18_161716) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "preview"
+    t.integer "hashtag_id", null: false
+    t.index ["hashtag_id"], name: "index_articles_on_hashtag_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -75,6 +78,14 @@ ActiveRecord::Schema.define(version: 2022_03_18_161716) do
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followee_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "display_in_navbar", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -126,6 +137,7 @@ ActiveRecord::Schema.define(version: 2022_03_18_161716) do
   end
 
   add_foreign_key "article_comments", "articles"
+  add_foreign_key "articles", "hashtags"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"

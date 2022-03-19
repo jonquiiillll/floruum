@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div>
+	<%= form.label :preview %>
+	<%= form.file_field :preview %>
+  </div>
+  <div class="field">
+    <%= form.label :hashtag_id %>
+    <%= form.select :hashtag_id, Hashtag.pluck(:name, :id) %>
+</div>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
