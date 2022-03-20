@@ -5,7 +5,7 @@ const A_ArticlePreview = ({
 image
 }) => {
     return (
-      <img className="post_image"src={`${image}`}/>
+      <img className="article_preview"src={`${image}`}/>
     );
 }
 

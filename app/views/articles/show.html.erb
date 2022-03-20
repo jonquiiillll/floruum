@@ -1,24 +1,6 @@
-<p id="notice"><%= notice %></p>
-<%= image_tag(@article.preview.url, alt: 'Preview') if @article.preview? %>
-<p>
-  <strong>Name:</strong>
-  <%= @article.name %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Hashtag:</strong>
-  <%= @article.hashtag.name %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
+<div className="cont_art">
+<%= react_component 'O_ArticleShow', {article: @article, hashtag: @hashtag} %>
+</div>
 
 <h2>Comments</h2>
 <h2>Comments</h2>

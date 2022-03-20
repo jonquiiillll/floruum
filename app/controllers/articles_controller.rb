@@ -19,6 +19,13 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    @articles = Article.all
+    @hashtags = Hashtag.all
+    if params.has_key?(:hashtag)
+       @hashtag = Hashtag.find(@article.hashtag_id)
+       @articles = Article.where(hashtag: @hashtag)
+    end
+    @hashtag = Hashtag.find(@article.hashtag_id)
   end
 
   # GET /articles/new

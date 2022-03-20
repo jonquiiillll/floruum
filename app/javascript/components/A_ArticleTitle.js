@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 const STYLES = [
   'article--white',
   'article--black',
+  'article--white--show',
 ]
 
 const A_ArticleTitle = ({
