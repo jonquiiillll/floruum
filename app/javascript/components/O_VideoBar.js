@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-class OVideoBar extends React.Component {
+class O_VideoBar extends React.Component {
   render () {
     return (
-      <React.Fragment>
-      </React.Fragment>
+    <div>
+    </div>
     );
   }
 }
 
-export default OVideoBar
+export default O_VideoBar

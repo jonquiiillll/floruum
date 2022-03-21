@@ -9,10 +9,6 @@ import A_PostUser from "./A_PostUser.js"
 
 class M_QuestionCard extends React.Component {
   render () {
-
-
-
-
     return (
   <div>
       {this.props.posts.slice(0,3).map(post => (

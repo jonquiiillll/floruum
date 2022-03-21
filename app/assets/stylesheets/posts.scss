@@ -8,8 +8,21 @@ body {
   color: white;
   margin: 0px;
 }
+.A_H4--black {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 35px;
+}
 .TextBlock {
   padding-top: 115px;
+}
+.text_email {
+  padding-top: 1px;
+  width:45%;
+}
+.content_email {
+  padding-left: 40px;
+
 }
 .topmenu_button {
   width: 40% !important;
@@ -27,6 +40,37 @@ body {
 }
 .P_Tag_width {
   width: 400px;
+}
+.tags_main_page {
+  display: flex;
+}
+.small_text {
+  font-size: 16px;
+  color: #535353;
+  font-weight: 400;
+  width: 78%;
+  margin-top: -5px;
+}
+.input_form {
+  margin-right: 16px;
+}
+.MainTags {
+  background: white;
+  width: 30%;
+}
+.submit_info {
+  width: 96%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.button--white {
+  background: #738A5F;
+border-radius: 8px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
 }
 .A_PTag--white {
   font-weight: 400;
@@ -529,6 +573,19 @@ text-align: center;
   background-size: cover !important;
   margin-top: 100px !important;
 
+}
+.content_email {
+  height: 100%;
+  width: 50%;
+  background: white;
+  border-radius: 30px;
+}
+.email--box {
+  width: 100%;
+  background: url('email_image.png');
+  height: 294px;
+  background-size: cover;
+  border-radius: 30px;
 }
 .commenter {
   width: 20%;

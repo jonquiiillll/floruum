@@ -1,5 +1,11 @@
 <div class="container_main">
       <%= react_component 'M_TopMenu', {categories: @categories}%>
       <%= react_component 'O_PostsMainPage', {articles: @articles} %>
+      <div class="tags_main_page">
+        <%= react_component 'M_MainPageTagsView', {posts: @posts} %>
+        <%= react_component 'M_QuestionCard', {posts: @posts, post: @post, user: @user} %>
+      </div>
+      <%= react_component 'O_PostsMainPage', {articles: @articles} %>
+      <%= react_component 'M_EmailSend' %>
 </div>
 <%= react_component 'O_Footer' %>
