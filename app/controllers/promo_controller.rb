@@ -3,6 +3,7 @@ class PromoController < ApplicationController
     @articles = Article.all
     @posts = Post.all
     @hashtags = Hashtag.all
+    @categories = Category.all
     @users = User.all
     if params.has_key?(:hashtag)
       @hashtag = Hashtag.find_by_name(params[:hashtag])

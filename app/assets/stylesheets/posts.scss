@@ -64,6 +64,7 @@ position: fixed;
 .small_text {
   font-size: 16px;
   color: #535353;
+  margin-bottom: 50px;
   font-weight: 400;
   width: 78%;
   margin-top: -5px;
@@ -85,12 +86,19 @@ option {
   color: #959595;
   padding: 10px;
 }
+.main_text_cat {
+  width: 80%;
+  color: black;
+
+}
 .input_form {
   margin-right: 16px;
 }
 .MainTags {
   background: white;
-  width: 30%;
+  width: 37%;
+  border-radius: 30px;
+  padding: 10px 1px 20px 35px;
 }
 .submit_info {
   width: 96%;
@@ -847,7 +855,9 @@ justify-content: flex-end;
   box-shadow: 0px 4px 4px rgba(0.05, 0.05, 0.05, 0.05);
   border-radius: 27px;
   color: black;
-  margin-bottom: 20px;
+  display: inline-flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 14px;
   padding: 7px 20px 7px 20px;
@@ -970,9 +980,6 @@ justify-content: flex-end;
 }
 .TwoColumns {
   border: 1px solid red;
-}
-img {
-  border-radius: 10px;
 }
 .title--white {
   color: white;
