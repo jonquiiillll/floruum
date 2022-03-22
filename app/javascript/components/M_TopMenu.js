@@ -16,7 +16,12 @@ class M_TopMenu extends React.Component {
         <A_PTag
             content = {'Мы сможем найти статью по любому вашему запросу. Просто выберите интересующую вас тему'}>
          </A_PTag>
-         <A_Button link = {'posts/'} type = {"topmenu_button white"} content = {'Найти!'}/>
+         <select className="select_main">
+           <option value="" disabled selected>Категория</option>
+           <option value="grapefruit">Полив растений</option>
+           <option value="lime">Пересадка</option>
+         </select>
+         <A_Button link = {'posts/'} color="button--long" content = {'Найти!'}/>
          </div>
        </div>
     );

@@ -11,7 +11,7 @@ class M_QuestionCard extends React.Component {
   render () {
     return (
   <div>
-      {this.props.posts.slice(0,3).map(post => (
+      {this.props.posts.map(post => (
     <a href={`/posts/${post.id}`}>
       <div className="window" key={post.id} >
         <div className="preview" style={{backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(${post.image.url})` }}>
