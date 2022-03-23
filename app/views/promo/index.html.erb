@@ -1,6 +1,8 @@
 <div class="container_main">
       <%= react_component 'M_TopMenu', {categories: @categories}%>
       <%= react_component 'O_PostsMainPage', {articles: @articles} %>
+      <%= react_component 'O_VideoBar', {articles: @articles} %>
+      <%= react_component 'O_4ColumnsPosts', {articles: @articles} %>
       <div class="tags_main_page">
         <%= react_component 'M_MainPageTagsView', {categories: @categories} %>
       <div>
