@@ -99,6 +99,7 @@ option {
 .MainTags {
   background: white;
   width: 37%;
+  height: 420px;
   border-radius: 30px;
   padding: 10px 1px 20px 35px;
 }
@@ -994,6 +995,14 @@ justify-content: flex-end;
   font-weight: 500;
   line-height: 35.22px;
   font-size: 30px;
+}
+.post_on_main_page {
+  width: 66%;
+  margin-left: 18px;
+  margin-top: -17px;
+}
+.container_tags_and_posts {
+  display: flex;
 }
 .Video_post:nth-of-type(2n) {
   padding-bottom: 10px;
