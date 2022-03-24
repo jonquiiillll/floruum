@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @categories = Category.all
+    @comments = Comment.all
     if params.has_key?(:category)
        @category = Category.find(@post.category_id)
        @posts = Post.where(category: @category, user: @user)

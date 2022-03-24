@@ -1,7 +1,13 @@
 <div class="content_posts_show">
   <div class="content_posts show">
     <%= react_component 'O_PostView', { post: @post, user: @user, category: @category} %>
+    <div class="element_active_table">
+    <%= @post.likes.count %>  <%= image_tag 'like.svg', :class => "icon"  %>
+    </div>
     <h2 class="answer">Комментарии:</h2>
+
+
+
 <%= render @post.comments %>
 
 <h2>Добавить комментарий:</h2>

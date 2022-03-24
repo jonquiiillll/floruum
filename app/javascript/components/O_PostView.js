@@ -37,7 +37,6 @@ class O_PostView extends React.Component {
           avatar = {this.props.user.avatar.small_thumb.url}
           date = {this.props.created_at}>
       </A_PostUser>
-      <hr/>
       </div>
 
        </div>

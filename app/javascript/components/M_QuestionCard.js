@@ -38,7 +38,7 @@ class M_QuestionCard extends React.Component {
             </div>
       </div>
             <A_PostContent style="content--grey"
-              text = {post.content.slice(0, 20)}/>
+              text = {post.content.slice(0, 200)}/>
       </div>
     </a>
     ))}
