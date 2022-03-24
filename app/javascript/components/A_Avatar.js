@@ -4,11 +4,14 @@ import PropTypes from "prop-types"
 
 const A_Avatar = ({
   avatar,
-  link
+  link,
+  size
 }) => {
     return (
       <div className="userinfo">
-        <a href={`/users/${link}`}><img src={`${avatar}`}/></a>
+        <a href={`/users/${link}`}>
+        <img className={size} src={`${avatar}`}/>
+        </a>
       </div>
     );
   }

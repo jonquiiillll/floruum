@@ -3,7 +3,9 @@ import PropTypes from "prop-types"
 
 const STYLES = [
   'A_PTag--white',
-  'A_PTag--black'
+  'A_PTag--black',
+  'A_PTag--black--big',
+  'A_PTag--white--default'
 ]
 
 const A_PTag = ({

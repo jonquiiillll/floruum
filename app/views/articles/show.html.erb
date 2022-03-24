@@ -1,14 +1,16 @@
 <div className="cont_art">
 <%= react_component 'O_ArticleShow', {article: @article, hashtag: @hashtag} %>
-</div>
 
+</div>
+<div className="end--article">
+<%= react_component 'M_EndOfArticle', {hashtag: @hashtag} %>
+</div>
 <h2>Comments</h2>
 <h2>Comments</h2>
 <%= render @article.article_comments %>
 
 <h2>Add a comment:</h2>
 <%= render "article_comments/form" %>
-
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
-<img src="water.svg" class="water">
+<%= react_component 'O_Footer' %>
