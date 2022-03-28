@@ -16,7 +16,7 @@ style
   ? style : STYLES[0]
 
   return (
-    <a className = {`${checkStyle}`} dangerouslySetInnerHTML={textpart} href={`/post?category=${category}`}></a>
+    <a className = {`${checkStyle}`} dangerouslySetInnerHTML={textpart} href={`/posts?category=${category}`}></a>
   );
 }
 

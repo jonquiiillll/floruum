@@ -18,7 +18,6 @@ class M_AccountCard extends React.Component {
       <a href={`/users/sign_out`}> Выйти </a>
       </div>
       </div>
-
     );
   }
 }

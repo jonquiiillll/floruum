@@ -1,15 +1,10 @@
 <div class="content_posts_show">
   <div class="content_posts show">
     <%= react_component 'O_PostView', { post: @post, user: @user, category: @category} %>
-    <div class="element_active_table">
-    <%= @post.likes.count %>  <%= image_tag 'like.svg', :class => "icon"  %>
-    </div>
-    <h2 class="answer">Комментарии:</h2>
 
-
-
+<div class="comment--view">
 <%= render @post.comments %>
-
+</div>
 <h2>Добавить комментарий:</h2>
 <!--  -->
 <% if user_signed_in? %>
@@ -17,5 +12,7 @@
 <% else %>
 <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
 <% end %>
-  </div>
 </div>
+
+</div>
+<%= react_component 'O_Footer' %>

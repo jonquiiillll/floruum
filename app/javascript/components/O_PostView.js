@@ -5,6 +5,7 @@ import A_ImagePost from "./A_ImagePost.js"
 import A_PostContent from "./A_PostContent.js"
 import A_PostUser from "./A_PostUser.js"
 import A_Category from "./A_Category.js"
+import A_GetAnswer from "./A_GetAnswer.js"
 
 class O_PostView extends React.Component {
   render () {
@@ -38,6 +39,8 @@ class O_PostView extends React.Component {
           date = {this.props.created_at}>
       </A_PostUser>
       </div>
+      <hr/>
+      <A_GetAnswer />
 
        </div>
     );

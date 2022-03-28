@@ -1,16 +1,13 @@
+<div class="comment--show">
 <div class="answer_window">
-	<p>
-	
 
+  <div class="icon--post"><%= image_tag(User.find(comment.user_id).avatar.small_thumb.url, alt: 'Avatar') %></div>
   <%= User.find(comment.user_id).username %>
-</p>
-</div>
-<div class="comment_body">
-	<p>
-		<b></b>
 
+</div>
+<p>
 		<%= comment.body.html_safe %>
-	</p>
+</p>
 	<% if user_signed_in? && current_user.id == comment.user_id  %>
 <p>
 	<%= link_to  [comment.post, comment],
@@ -18,10 +15,9 @@
                :method => :delete do%>
 	<div class="comment_delete">
 
- <%= image_tag 'delete.svg', :class => "icon"  %>
-
-	</div>
+ <%= image_tag 'DotMenu.svg', :class => "delete--icon"  %>
 <% end %>
 
 <% end %>
+</div>
 </div>

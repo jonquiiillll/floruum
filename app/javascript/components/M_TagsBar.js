@@ -10,6 +10,7 @@ class M_TagsBar extends React.Component {
           {this.props.categories.map(category => (
             <A_Category
               style="Category--default"
+              category = {`${category.name}`}
               textpart = {{__html: `${category.name}`}}>
             </A_Category>
         ))}

@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const STYLES = [
-  'content--black',
+  'contentpost--black',
   'content--grey',
 ]
 

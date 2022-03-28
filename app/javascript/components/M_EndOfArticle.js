@@ -7,14 +7,18 @@ class M_EndOfArticle extends React.Component {
   render () {
     return (
       <div className="end--of--article">
+      <div className="text--end--article">
       <A_PTag
         color = "A_PTag--white--default"
-        content = "Понравилась статья? Посмотрите похожие по тегам">
+        content = "Понравилась статья? Посмотрите&nbsp;похожие по тегам">
       </A_PTag>
+      </div>
+      <div className="category--end--article">
       <A_Category
         style="Category--default"
         textpart = {{__html: `${this.props.hashtag.name}`}}>
       </A_Category>
+      </div>
       </div>
     );
   }
