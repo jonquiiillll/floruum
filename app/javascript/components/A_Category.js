@@ -11,10 +11,8 @@ category,
 textpart,
 style
 }) => {
-
   const checkStyle = STYLES.includes(style)
   ? style : STYLES[0]
-
   return (
     <a className = {`${checkStyle}`} dangerouslySetInnerHTML={textpart} href={`/posts?category=${category}`}></a>
   );

@@ -10,7 +10,6 @@ import A_PostUser from "./A_PostUser.js"
 
 class M_QuestionCard extends React.Component {
   render () {
-
     return (
   <div>
       {this.props.posts.map(post => (
@@ -37,7 +36,6 @@ class M_QuestionCard extends React.Component {
             <A_PostContent
               text = {post.content.slice(0, 200)}
               style = "contentpost--black"/>
-
       </div>
     </a>
     ))}
@@ -46,7 +44,5 @@ class M_QuestionCard extends React.Component {
     );
   }
 }
-M_QuestionCard.propTypes = {
-  posts: PropTypes.array
-};
+
 export default M_QuestionCard
