@@ -1,12 +1,15 @@
 <div className="cont_art">
 <%= react_component 'O_ArticleShow', {article: @article, hashtag: @hashtag, article_comments: @article_comments} %>
 
-</div>
+
 <div className="end--article">
 <%= react_component 'M_EndOfArticle', {hashtag: @hashtag} %>
 </div>
+<div className="showww">
 <h2>Comments</h2>
 <p><%= render @article.article_comments %><p>
 <h2>Add a comment:</h2>
 <%= render "article_comments/form" %>
+</div>
+</div>
 <%= react_component 'O_Footer' %>

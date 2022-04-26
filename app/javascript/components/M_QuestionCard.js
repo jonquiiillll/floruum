@@ -35,7 +35,7 @@ class M_QuestionCard extends React.Component {
       </div>
             <A_PostContent
               text = {post.content.slice(0, 200)}
-              style = "contentpost--black"/>
+              style = "contentpost--black--in--post"/>
       </div>
     </a>
     ))}

@@ -93,7 +93,7 @@ const OneColumn = this.props.articles.slice(5,6).map((articles) =>
       {ThreeColumn}
       {OneColumn}
       {FourColumn}
-      <A_Button link = {'posts/new'} type="button--long" color="white" content = {'Больше знаний'}/>
+      <A_Button link = {'posts/new'} type="button--long--in--article" color="white" content = {'Больше знаний'}/>
       </div>
     );
   }

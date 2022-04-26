@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 
 const STYLES = [
   'contentpost--black',
+  'contentpost--black--in--post',
   'content--grey',
 ]
 
