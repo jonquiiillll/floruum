@@ -3,11 +3,11 @@ import PropTypes from "prop-types"
 import A_Logo from "./A_Logo.js"
 import A_Button from "./A_Button.js"
 import A_Avatar from "./A_Avatar.js"
+import UserNotLoginIn from './UserNotLoginIn.svg';
 
 class O_Header extends React.Component {
   render () {
     return (
-       <% if user_signed_in? %>
       <div>
       <nav>
       <div className="right_section_navbar">
@@ -21,12 +21,11 @@ class O_Header extends React.Component {
         <A_Button link = {'posts/new'} color="white button--default" content = {'Задать вопрос'}/>
         <A_Avatar
             link = {this.props.current_user.id}
-            avatar = {this.props.current_user.avatar.small_thumb.url}>
+            avatar = {this.props.current_user.avatar.url == null ? UserNotLoginIn : this.props.current_user.avatar.small_thumb.url}>
         </A_Avatar>
       </div>
       </nav>
       </div>
-      <% end %>
     );
   }
 }

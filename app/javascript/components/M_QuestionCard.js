@@ -6,6 +6,7 @@ import A_PostPreview from "./A_PostPreview.js"
 import A_PostTitle from "./A_PostTitle.js"
 import A_Category from "./A_Category.js"
 import A_PostUser from "./A_PostUser.js"
+import UserNotLoginIn from './UserNotLoginIn.svg';
 
 
 class M_QuestionCard extends React.Component {
@@ -28,7 +29,7 @@ class M_QuestionCard extends React.Component {
             </A_PostTitle>
             <A_PostUser
                 username = {post.user.username}
-                avatar = {post.user.avatar.small_thumb.url}
+                avatar = {post.user.avatar.small_thumb.url == null ? UserNotLoginIn : post.user.avatar.small_thumb.url}
                 date = {post.created_at}>
             </A_PostUser>
             </div>

@@ -1,0 +1,18 @@
+.reg_image {
+  width: 38%;
+  background-image: url('RegistrationImage.png');
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.reg_info {
+  width: 73%;
+  display: flex;
+  justify-content: center;
+}
+.reg_container {
+  display: flex;
+}
+.reg_inputs {
+  width: 45%;
+}
