@@ -729,9 +729,9 @@ font-feature-settings: 'pnum' on, 'lnum' on;
   background: white;
 }
 .button--default {
-  background: #738A5F;
+  background: #293C37;
   margin-right: 21px;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: 500;
   color: white;
   font-size: 17px;
@@ -989,6 +989,8 @@ justify-content: flex-end;
   left: 30px;
 }
 .article_content {
+  display: flex;
+  justify-content:space-between;
   margin-top: 50px;
 }
 .bottom_of_answer {
@@ -1150,7 +1152,7 @@ justify-content: flex-end;
 }
 .content--article {
   font-weight: 400;
-  width: 70%;
+  width: 60%;
   font-size: 23px;
   color: black;
 }
@@ -1248,7 +1250,7 @@ a {
   display: flex;
 }
 .content_top {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 .links--group {
   display: flex;
@@ -1275,7 +1277,7 @@ table {
   margin-top: 0px;
   margin-bottom: 50px;
   background: white;
-  height: 300px;
+  height: 216px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.03);
   border-radius: 38px;
 }

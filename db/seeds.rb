@@ -1,4 +1,6 @@
 Post.destroy_all
+Story.destroy_all
+Point.destroy_all
 puts "Удаление всех постов"
 
 posts = [

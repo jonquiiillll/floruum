@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
 	def index
 		@comments = Comment.all
 		@users = User.all
-	
 	end
 	def create
 		@post = Post.find(params[:post_id])

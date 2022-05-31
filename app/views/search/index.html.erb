@@ -1,0 +1,20 @@
+  <a href="/promo">
+<div class="close--icon-search">
+  <%= image_tag 'A_CloseIcone.svg', class:"icon--close" %>
+</div>
+ </a>
+<div class="body">
+  <div class="search--bar">
+    <%= form_tag stories_path , :method => 'get' do %>
+  <p>
+    <%= text_field_tag :starts_with, params[:starts_with] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+    <input type="text" className="search--page" placeholder="Что будем искать?">
+    <div class="search--items">
+      <p className="search--text">Частые запросы по темам</p>
+      <%= react_component 'M_HashtagList', {hashtags: @hashtags}%>
+    </div>
+  </div>
+</div>

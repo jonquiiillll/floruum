@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @art.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @art.title %>
+</p>
+<%= image_tag(@art.pic.url, alt: 'Pic') if @art.pic? %>
+<p>
+  <strong>Content:</strong>
+  <%= @art.content %>
+</p>
+
+<h2>Comments</h2>
+<%= render @art.marks %>
+
+
+<h2>Add a comment:</h2>
+<%= render "marks/form" %>
+
+<%= link_to 'Edit', edit_art_path(@art) %> |
+<%= link_to 'Back', arts_path %>

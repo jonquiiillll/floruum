@@ -1,7 +1,17 @@
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<div class="hashtag_container_all" id="example">
+  <a href="/articles" class="all_articles">Лучшее <br> на Florum</a>
+
+</div>
+<script type="text/javascript">
+          $( "div.example" ).scrollLeft(0);
+          </script>
 <%= react_component 'M_TopArticle'%>
+
+
 <div class="container_articles">
 
-<%= react_component 'O_ArticleView', {articles: @articles} %>
+<%= react_component 'O_ArticleView', {articles: @articles, hashtag: @hashtag} %>
 </div>
 
 <%= react_component 'O_Footer' %>

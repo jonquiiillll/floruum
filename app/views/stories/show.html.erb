@@ -1,0 +1,17 @@
+
+
+<p id="notice"><%= notice %></p> <p>
+
+  <%= react_component 'O_ArticleShow', {story: @story, sort: @sort} %>
+  <div class="all_article_show">
+    <div class="comment--story">
+      <div class="comment--text--story">
+        <h2 class="comment--h2--story">Комментарии </h2> <h2 class="comment--h2--story--grey"><%= @story.points.count %></h2>
+            <%= render @story.points %>
+      </div>
+    </div>
+  </div>
+  <%= render "points/form" %>
+
+  <%= link_to 'Edit', edit_story_path(@story) %>
+  <%= link_to 'Back', stories_path %>

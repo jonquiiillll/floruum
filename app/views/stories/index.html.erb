@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<div class="sort_container_all" id="example">
+  <a href="/stories" class="all_articles">Лучшее <br> на Florum</a>
+<div class="hashtags_container">
+<% Sort.all.each do |cat| %>
+	<%= link_to cat.name, stories_path(sort: cat.name), class: "sort_element" %> <br>
+<% end %>
+</div>
+</div>
+<%= react_component 'M_TopArticle'%>
+<div class="container_articles">
+<%= react_component 'O_ArticleView', {stories: @stories, sorts: @sorts, sort: @sort, points: @points} %>
+</div>
+<%= link_to 'New Story', new_story_path %>

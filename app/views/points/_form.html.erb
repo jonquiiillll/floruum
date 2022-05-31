@@ -1,0 +1,12 @@
+<%= form_for([@story, @story.points.build]) do |f| %>
+<div class="print--message--comment">
+  <div class="icon--post"><%= image_tag(User.find(current_user.id).avatar.small_thumb.url, alt: 'Avatar') %></div>
+
+  <div class="field">
+    <%= f.text_area :body, :placeholder => "Комментировать" %>
+  </div>
+  <div class="actions">
+    <%= f.submit%>
+  </div>
+</div>
+<% end %>

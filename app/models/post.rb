@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+	  scope :filter_by_starts_with, -> (name) { where("name like ?", "%#{name}%")}
 		validates :name, :presence => true
 		# validates :title, :presence => true,
 		# 									:length => { :minimum => 5 }

@@ -77,6 +77,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def filtering_params(params)
+    params.slice(:category, :starts_with)
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    
     if @user
       @posts = @user.favorited_posts
       render actions: :show
@@ -60,6 +61,6 @@ def favorited?(post)
     redirect_to users_path, notice: 'User deleted.'
   end
   def user_params
-    params.require(:user).permit(:username, :avatar)
+    params.require(:user).permit(:username, :user_id, :avatar)
   end
 end

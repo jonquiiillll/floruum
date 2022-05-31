@@ -8,6 +8,7 @@ class HashtagsController < ApplicationController
 
   # GET /hashtags/1 or /hashtags/1.json
   def show
+    @hashtags = Hashtag.all
   end
 
   # GET /hashtags/new
@@ -60,6 +61,7 @@ class HashtagsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_hashtag
       @hashtag = Hashtag.find(params[:id])
+      @hashtag = Hashtag.find(params[:name])
     end
 
     # Only allow a list of trusted parameters through.

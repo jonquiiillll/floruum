@@ -14,7 +14,7 @@ class O_HeaderDefault extends React.Component {
         <A_Logo />
         <div className="right_links">
           <a href="\posts" className="right_link black"> Вопросы </a>
-          <a href="\articles" className="black" >Статьи</a>
+          <a href="\stories" className="black" >Статьи</a>
         </div>
       </div>
       <div className="active_header">

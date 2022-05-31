@@ -83,6 +83,7 @@ display: flex;justify-content: space-between;
    height: 77px;
    position: fixed;
    top: 0;
+   border-radius:0px 0px 30px 30px;
    width: 86%;
    z-index: 3;
    border-bottom: 1px solid rgba(0, 0, 0, 0.07);

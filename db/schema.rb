@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_19_091833) do
+ActiveRecord::Schema.define(version: 2022_05_27_173033) do
+
+  create_table "additions", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "story_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["story_id"], name: "index_additions_on_story_id"
+    t.index ["user_id"], name: "index_additions_on_user_id"
+  end
 
   create_table "answers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -35,6 +46,17 @@ ActiveRecord::Schema.define(version: 2022_03_19_091833) do
     t.string "preview"
     t.integer "hashtag_id", null: false
     t.index ["hashtag_id"], name: "index_articles_on_hashtag_id"
+  end
+
+  create_table "arts", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "pic"
+    t.integer "type_id", null: false
+    t.index ["type_id"], name: "index_arts_on_type_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -75,6 +97,15 @@ ActiveRecord::Schema.define(version: 2022_03_19_091833) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "story_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["story_id"], name: "index_feedbacks_on_story_id"
+  end
+
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followee_id"
@@ -99,6 +130,35 @@ ActiveRecord::Schema.define(version: 2022_03_19_091833) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "marks", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "art_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["art_id"], name: "index_marks_on_art_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_notes_on_post_id"
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "story_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["story_id"], name: "index_points_on_story_id"
+    t.index ["user_id"], name: "index_points_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.string "title"
@@ -114,8 +174,38 @@ ActiveRecord::Schema.define(version: 2022_03_19_091833) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "sorts", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "display_in_navbar", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "picture"
+    t.integer "sort_id", null: false
+    t.text "remark"
+    t.integer "user_id", null: false
+    t.index ["sort_id"], name: "index_stories_on_sort_id"
+    t.index ["user_id"], name: "index_stories_on_user_id"
+  end
+
   create_table "subscribers", force: :cascade do |t|
     t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "display_in_navbar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -136,14 +226,24 @@ ActiveRecord::Schema.define(version: 2022_03_19_091833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "additions", "stories"
+  add_foreign_key "additions", "users"
   add_foreign_key "article_comments", "articles"
   add_foreign_key "articles", "hashtags"
+  add_foreign_key "arts", "types"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
+  add_foreign_key "feedbacks", "stories"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "marks", "arts"
+  add_foreign_key "notes", "posts"
+  add_foreign_key "points", "stories"
+  add_foreign_key "points", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
+  add_foreign_key "stories", "sorts"
+  add_foreign_key "stories", "users"
 end

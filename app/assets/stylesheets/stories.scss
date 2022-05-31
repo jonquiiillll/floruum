@@ -1,0 +1,137 @@
+// Place all the styles related to the Stories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.sort_element:nth-child(1) {
+  background: url('back_hashtag.png');
+  background-size: cover;
+}
+.Hashtag--default {
+  color: black;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 9px 20px 9px 20px;
+  background: white;
+  display: inline;
+}
+.sort_element:nth-child(3) {
+  background: url('hashtag_earth.png');
+  background-size: cover;
+}
+.sort_element:nth-child(5) {
+  background: url('hashtag_plant.png');
+  background-size: cover;
+}
+.sort_element:nth-child(7) {
+  background: url('hashtag_grow.png') !important;
+  background-size: cover;
+}
+.sort_element:nth-child(9) {
+  background: url('hashtag_plant.png');
+  background-size: cover;
+  text-align: center;
+  display: flex;
+}
+.sort_element:nth-child(11) {
+  background: url('hashtag_plant.png');
+  background-size: cover;
+  text-align: center;
+  display: flex;
+}
+.remark--article {
+  padding: 5px 30px 5px 30px;
+  display: inline;
+  height: fit-content;
+  width: 28%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+}
+.sort_element:nth-child(13) {
+  background: #2C413A;
+  background-size: cover;
+}
+.sort_container_all {
+  display: flex;
+  align-items: flex-end;
+  background: white;
+  height: 195px;
+  width: 100%;
+  margin-right: 19px;
+}
+.comment--h2--story {
+  font-weight: 500;
+  line-height: 0px;
+  margin-left: 15px;
+  font-size: 30px;
+}
+.comment--h2--story--grey {
+  font-weight: 500;
+  color: #8B8B8B;
+  line-height: 0px;
+  margin-left: 10px;
+  font-size: 30px;
+}
+.print--message--comment {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 30px;
+}
+.comment--text--story {
+  display: flex;
+}
+
+.submit--point {
+  margin-left: 20px;
+  width: 25px;
+  align-self: center;
+  margin-top: 5px;
+}
+
+input[type=submit] {
+  background: url('A_Sendicon.svg') !important;
+  background-repeat: no-repeat !important;
+  border: none;
+  background-size: cover;
+  width: 40px !important;
+}
+#point_body {
+  width: 923px !important;
+  resize: none;
+  height: 20px;
+  background: #EFEFF1;
+  border-radius: 41px;
+  border: none;
+  display: flex;
+  align-content: center;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  padding-left: 20px !important;
+  color: #8B8B8B;
+  font-size: 16px;
+  transition: all .3s;
+  padding: 10px;;
+}
+.sort_element {
+  width: 200px;
+  font-size: 20px;
+  height: 100px;
+  color: white;
+  background: #F4F4F5;
+  margin-right: 19px;
+  border-radius: 8px;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+}
+.comment--story {
+  background: white;
+  border-radius: 11px;
+  padding: 30px;
+  margin-top: 50px;
+}

@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+    scope :filter_by_hashtag, -> (hashtag) { where hashtag: hashtag }
 		validates :name, :presence => true
 		validates :title, :presence => true,
 											:length => { :minimum => 5 }

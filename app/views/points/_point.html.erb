@@ -1,0 +1,14 @@
+<p>
+  <%= User.find(point.user_id).username %>
+  <%= point.body %>
+</p>
+<% if user_signed_in? && current_user.id == point.user_id  %>
+<p>
+<%= link_to  [point.story, point],
+             :confirm => 'Are you sure?',
+             :method => :delete do%>
+<div class="comment_delete">
+
+<%= image_tag 'DotMenu.svg', :class => "delete--icon"  %>
+<% end %>
+<% end %>

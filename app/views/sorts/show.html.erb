@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sort.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sort.description %>
+</p>
+
+<p>
+  <strong>Display in navbar:</strong>
+  <%= @sort.display_in_navbar %>
+</p>
+
+<%= link_to 'Edit', edit_sort_path(@sort) %> |
+<%= link_to 'Back', sorts_path %>

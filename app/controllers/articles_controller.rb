@@ -3,29 +3,27 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
-    @hashtags = Hashtag.all
-    @users = User.all
-    if params.has_key?(:hashtag)
-      @hashtag = Hashtag.find_by_name(params[:hashtag])
-      @articles = Article.where(hashtag: @hashtag, user: @user)
-    else
-      @articles = Article.all.includes(:hashtag).map do
-    |post|
-    post.as_json(include: [:hashtag, :article_comments, :preview])
-  end
+      @articles = Article.all
+      @hashtags = Hashtag.all
+      @users = User.all
+      if params.has_key?(:hashtag)
+        @hashtags = Hashtag.all
+        @articles = Article.where(nil)
+        @articles = @articles.filter_by_hashtag(params[:hashtag]) if params[:hashtag].present?
+        @hashtag = Hashtag.find_by_name(params[:hashtag])
+        @articles = Article.where(hashtag: @hashtag)
+      else
+        @articles = Article.all.includes(:hashtag).map do
+      |article|
+      article.as_json(include: [:hashtag, :preview])
+      end
+     end
     end
-  end
 
   # GET /articles/1 or /articles/1.json
   def show
     @articles = Article.all
     @hashtags = Hashtag.all
-    if params.has_key?(:hashtag)
-       @hashtag = Hashtag.find(@article.hashtag_id)
-       @articles = Article.where(hashtag: @hashtag)
-    end
-    @hashtag = Hashtag.find(@article.hashtag_id)
   end
 
   # GET /articles/new
@@ -77,11 +75,11 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      @hashtags = Hashtag.all
     end
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:name, :user, :preview, :hashtag_id, :title, :content)
+      params.require(:article).permit(:name, :user, :preview, :hashtag_id, :hashtag.name, :title, :content)
     end
 end
