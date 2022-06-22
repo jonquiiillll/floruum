@@ -9,7 +9,7 @@ class M_TopArticle extends React.Component {
       <div className="M_TopArticle">
       <div className="content_top">
       <A_H1 content ="Лучшее на Florum"/>
-      <A_Links content ="Поиск по всем вопросам о поливе растений"/>
+      <A_Links content ="Поиск по всем вопросам о поливе растений" className="text--top--article"/>
       </div>
       </div>
     );

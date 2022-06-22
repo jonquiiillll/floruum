@@ -5,6 +5,7 @@ import A_ArticleHashtag from "./A_ArticleHashtag.js"
 import A_ArticleTitle from "./A_ArticleTitle.js"
 import M_ArticleRemark from "./M_ArticleRemark.js"
 import A_ArticleContent from "./A_ArticleContent.js"
+import A_Counter from "./A_Counter.js"
 
 class O_ArticleShow extends React.Component {
   render () {
@@ -35,6 +36,7 @@ class O_ArticleShow extends React.Component {
          text = {this.props.story.remark}>
      </M_ArticleRemark>
      </div>
+     <A_Counter />
    </div>
     );
   }

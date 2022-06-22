@@ -11,4 +11,5 @@
 <div class="container_articles">
 <%= react_component 'O_ArticleView', {stories: @stories, sorts: @sorts, sort: @sort, points: @points} %>
 </div>
-<%= link_to 'New Story', new_story_path %>
+<%# <%= link_to 'New Story', new_story_path %> %>
+<%= react_component 'O_Footer' %>

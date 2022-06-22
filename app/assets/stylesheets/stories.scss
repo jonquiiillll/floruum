@@ -16,6 +16,39 @@
   background: white;
   display: inline;
 }
+.textarea--comment {
+  height: 30px;
+}
+.counter {
+  display: flex;
+}
+.button--text {
+  margin: 0 auto;
+    width: 11%;
+}
+.comment--submit {
+  background: url('A_Sendicon.svg');
+  border: 0px white solid;
+  width: 38px;
+  margin-left: 10px;
+  height: 38px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#point_body {
+  height: 40px !important;
+}
+.button--text {
+ color: black;
+ margin: 0 auto;
+ margin-top: 20px;
+}
+.Links--black {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .sort_element:nth-child(3) {
   background: url('hashtag_earth.png');
   background-size: cover;

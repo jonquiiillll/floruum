@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 const STYLES = [
   'button--default',
   'button--unable',
+  'button--text',
   'button--long'
 ]
 
@@ -13,6 +14,7 @@ const TYPES = [
 
 const COLORS = [
   'white',
+  'black'
 ]
 
 const A_Button = ({

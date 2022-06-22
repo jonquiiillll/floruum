@@ -3,11 +3,11 @@
   <h2>Пока что нет комментариев</h2>
   <% else %>
     <%= User.find(current_user.id).username %>
-    <%= @point.body %>
+    <%# <%= @point.body %> %>
     <p>
-    <%= link_to 'Destroy Comment', [point.story, point],
+    <%# <%= link_to 'Destroy Comment', [point.story, point],
                      :confirm => 'Are you sure?',
                      :method => :delete %>
      </p>
-  <% end %>
+  <% end %> %>
 </div>

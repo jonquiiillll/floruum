@@ -23,6 +23,7 @@ class StoriesController < ApplicationController
   def show
    @points = Point.all
    @points = User.all
+   @articles = Article.all
    @users = User.all
    @point = Point.find_by_id(params[:id])
   end

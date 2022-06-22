@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import A_ArticleTitle from "./A_ArticleTitle.js"
 import A_ArticleHashtag from "./A_ArticleHashtag.js"
 import A_Button from "./A_Button.js"
+import A_Counter from "./A_Counter.js"
 
 
 
@@ -79,12 +80,16 @@ const OneColumn = this.props.stories.slice(5,6).map((stories) =>
 );
 
     return (
+      <div>
       <div className="articles_columns">
       {TwoColumn}
       {ThreeColumn}
       {OneColumn}
       {FourColumn}
-      <A_Button link = {'posts/new'} type="button--long--in--article" color="white" content = {'Больше знаний'}/>
+      </div>
+      <A_Button link = {'posts/new'} type="button--text" color="black" content = {'Больше знаний'}/>
+
+
       </div>
     );
   }

@@ -3,10 +3,10 @@
   <div class="icon--post"><%= image_tag(User.find(current_user.id).avatar.small_thumb.url, alt: 'Avatar') %></div>
 
   <div class="field">
-    <%= f.text_area :body, :placeholder => "Комментировать" %>
+    <%= f.text_area :body, :placeholder => "Комментировать", class: "textarea--comment" %>
   </div>
-  <div class="actions">
-    <%= f.submit%>
+  <div class="actions comment-submiting">
+    <%= f.submit "", :class => 'comment--submit'%>
   </div>
 </div>
 <% end %>
