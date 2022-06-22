@@ -14,7 +14,6 @@ class PointsController < ApplicationController
   def destroy
 		@story = Story.find(params[:story_id])
 		@point = @story.points.find(params[:id])
-    @point = @story.points.create(params[:point].permit(:body).merge(user_id: current_user.id))
 		@point.destroy
 		redirect_to story_path(@story)
 	end

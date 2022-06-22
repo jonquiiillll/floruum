@@ -1,14 +1,117 @@
 .reg_image {
   width: 38%;
+  position: static;
   background-image: url('RegistrationImage.png');
   height: 100vh;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.registration {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+.reg--text {
+  text-align: center;
+}
 .reg_info {
   width: 73%;
   display: flex;
   justify-content: center;
+}
+input[type=text] {
+height: 42px;
+font-size: 16px;
+font-weight: 300;
+}
+input[type="email"] {
+  height: 42px;
+  font-size: 16px;
+  font-weight: 300;
+  background: white;
+  transition: 0.3s all;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+}
+input[type="email"]:hover {
+  border: 1px solid #738A5F;
+  transition: 0.3s all;
+}
+input[type="password"] {
+  height: 42px;
+  font-size: 16px;
+  transition: 0.3s all;
+  font-weight: 300;
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+}
+input[type="password"]:hover {
+  border: 1px solid #738A5F;
+  transition: 0.3s all;
+}
+input[type="submit"] {
+  background: #738A5F !important;
+  border: 1px solid #E0E0E0;
+}
+.log_in_user {
+  text-align: center !important;
+  margin: 0 auto;
+  display: flex;
+  width: fit-content;
+}
+.submit_reg {
+  width: 100% !important;
+  margin-top: 20px !important;
+}
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Выберите аватар';
+  color: black;
+  display: flex;
+  background: #FBF9F4;
+  width: 95% !important;
+  border: 1px dashed #738A5F;
+  border-radius: 8px;
+  padding: 5px 8px;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  outline: none;
+  padding-top: 33px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 400;
+  font-size: 10pt;
+}
+.custom-file-input::after {
+  content: 'кукусики';
+}
+.field--avatar {
+  width: 100%;
+    display: inline-grid;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+body {
+  padding: 20px;
 }
 .reg_container {
   display: flex;

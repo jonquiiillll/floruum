@@ -1,4 +1,4 @@
-<h2>Регистраци</h2>
+<h2 className="registration">Регистрация</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
@@ -18,7 +18,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> бла бла бла</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>

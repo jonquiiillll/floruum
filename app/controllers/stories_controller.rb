@@ -25,8 +25,6 @@ class StoriesController < ApplicationController
    @points = User.all
    @users = User.all
    @point = Point.find_by_id(params[:id])
-   @points =Point.where(user: @user, point: @point)
-   @users = User.where(user: @user, point: @point)
   end
 
   # GET /stories/new

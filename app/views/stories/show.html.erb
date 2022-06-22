@@ -1,17 +1,28 @@
-
-
-<p id="notice"><%= notice %></p> <p>
+<p id="notice"> <%= notice %></p> <p>
 
   <%= react_component 'O_ArticleShow', {story: @story, sort: @sort} %>
   <div class="all_article_show">
     <div class="comment--story">
+      <%= render "points/form" %>
+
       <div class="comment--text--story">
-        <h2 class="comment--h2--story">Комментарии </h2> <h2 class="comment--h2--story--grey"><%= @story.points.count %></h2>
-            <%= render @story.points %>
+        <h2 class="comment--h2--story">Комментарии  <h2 class="comment--h2--story--grey"><%= @story.points.count %></h2></h2>
       </div>
+    <% @story.points.each do |point| %>
+    <%= render "points/point" %>
+
+  	<!-- <p>
+      <%# <%= User.find(current_user.id).username %> %>
+  	</p>
+  	<p>
+  		<%# <%= point.body %> %>
+  	</p>
+    <p>
+    <%# <%= link_to 'Destroy Comment', [point.story, point], %>
+                     :confirm => 'Are you sure?',
+                     :method => :delete %>
+     </p> -->
+
+    <% end %>
     </div>
   </div>
-  <%= render "points/form" %>
-
-  <%= link_to 'Edit', edit_story_path(@story) %>
-  <%= link_to 'Back', stories_path %>

@@ -17,7 +17,7 @@ username,
     return (
       <div className = {`${checkStyles}`} dangerouslySetInnerHTML={{__html: `${text}` }}>
         <div>
-        // {this.point.user_id.username}
+        {current_user.username}
         </div>
       </div>
     );

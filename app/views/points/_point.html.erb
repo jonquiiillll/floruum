@@ -1,14 +1,13 @@
-<p>
-  <%= User.find(point.user_id).username %>
-  <%= point.body %>
-</p>
-<% if user_signed_in? && current_user.id == point.user_id  %>
-<p>
-<%= link_to  [point.story, point],
-             :confirm => 'Are you sure?',
-             :method => :delete do%>
-<div class="comment_delete">
-
-<%= image_tag 'DotMenu.svg', :class => "delete--icon"  %>
-<% end %>
-<% end %>
+<div class="comment--body">
+  <% if @story.points.count == 0 %>
+  <h2>Пока что нет комментариев</h2>
+  <% else %>
+    <%= User.find(current_user.id).username %>
+    <%= @point.body %>
+    <p>
+    <%= link_to 'Destroy Comment', [point.story, point],
+                     :confirm => 'Are you sure?',
+                     :method => :delete %>
+     </p>
+  <% end %>
+</div>
