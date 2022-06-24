@@ -1,19 +1,38 @@
 class UsersController < ApplicationController
   def index
+    @posts = Post.all
+    @categories = Category.all
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-    
+    @posts = Post.all
+    @categories = Category.all
+    if params.has_key?(:category)
+      @category = Category.find_by_name(params[:category])
+      @posts = Post.where(category: @category, user: @user)
+    else
+      @posts = Post.all.includes(:category, :user, :likes, :favorites).map do
+    |post|
+    post.as_json(include: [:category, :user, :comments, :image])
+  end
+    end
+
+    @stories = Story.all
     if @user
-      @posts = @user.favorited_posts
+      @stories = @user.mine_ids
       render actions: :show
-      @favorites = @user.favorites.all
+      @mines = @user.mines.all
     else
         render file: 'public/404', status: 404, formats: [:html]
     end
   end
+
+  def mined?(story)
+    mines.find_by(story_id: story.id).present?
+  end
+
   def myposts
     @user = User.find(params[:id])
     if @user

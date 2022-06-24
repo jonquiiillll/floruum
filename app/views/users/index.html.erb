@@ -1,41 +1,23 @@
 <div class="container_body_posts">
-  <div class="side_bar">
-    <div class="menu">
-      <%= link_to "Публикации", posts_path %> <br>
-    </div>
-    <% if user_signed_in? && current_user.isadmin == true %>
-    <div class="menu">
-      <%= link_to "Комментарии", answers_path %>
-    </div>
-    <% end %>
-    <div class="menu">
-      <%= link_to "Теги", categories_path %> <br>
-    </div>
-    <div class="menu">
-      <%= link_to "Люди", users_path %>
-    </div>
-    <div class="tools">
-      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
 
-    </div>
-  </div>
     <div class="container_content_users">
-      <h1 class="actual">Пользователи</h1>
-<table class="margin">
-
-  <div class="post_table margin">
-    <p class="Id"></p>
-    <p class="email">Почта</p>
-    <p class="email">Ник</p>
-      <p class="table_date">Посты</p>
+      <h1 class="actual margin">Пользователи</h1>
+<table class="margin--users">
+  <div class="post_table">
+    <p class="Id--users">ID</p>
+    <p class="Avatar--users">Аватар</p>
+    <p class="email--users">Почта</p>
+    <p class="email--users">Ник</p>
+      <p class="table_date--users">Посты</p>
   </div>
   <tbody>
     <% @users.each do |user| %>
-    <div class="window ">
+    <div class="window--admin ">
       <div class="Id">
-
-  <%= link_to(image_tag(user.avatar.small_thumb.url, alt: 'Avatar', :class => "avatar_round"), user) if user.avatar? %>
-
+        <%= user.id %>
+      </div>
+      <div class="Id">
+  <%= link_to(image_tag(user.avatar.small_thumb.url, alt: 'Avatar', :class => "avatar_users"), user) if user.avatar? %>
       </div>
 <div class="email">
         <%= link_to user.email, user %>
@@ -44,8 +26,6 @@
         <%= user.username %>
         </div>
         <div class="count">
-
-
       <%= user.posts.count %>
 
 </div>

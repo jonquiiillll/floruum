@@ -1,7 +1,15 @@
 <p id="notice"> <%= notice %></p> <p>
 
   <%= react_component 'O_ArticleShow', {story: @story, sort: @sort} %>
-
+  <% pre_mine = @story.mines.find { |mine| mine.user_id == current_user.id} %>
+  <% if pre_mine %>
+      <%= button_to 'Remove from Favorite', story_mine_path(@story, pre_mine), method: :delete %>
+  <% else %>
+      <%= button_to 'Add to Favorite', story_mines_path(@story), method: :story %>
+  <% end %>
+  <td><%= link_to 'Edit', edit_story_path(@story) %></td>
+  <td><%= link_to 'Destroy', @story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</p>
   <div class="all_article_show">
     <div class="comment--story">
       <div class="comment--text--story">
@@ -22,7 +30,7 @@
 
       <% end %>
       <%= render "points/form" %>
-      <td><%= link_to 'Edit', edit_story_path(@story) %></td>
+
 
     </div>
   </div>

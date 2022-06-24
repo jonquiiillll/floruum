@@ -1,10 +1,20 @@
 <div className="header_second">
-  <%= react_component 'M_TagsBar', {categories: @categories } %>
+  <%= react_component 'M_TagsBar', {categories: @categories, posts: @posts } %>
 </div>
-<div class="container_body_posts">
-  <div class="content_posts">
-    <div class="container_content">
-      <%= react_component 'M_QuestionCard', {posts: @posts, category: @category, comments: @comments} %>
+<div class="posts--container">
+
+  <div class="post--content">
+    <div class="post--window">
+      <h1 class="all--questions">Все вопросы</h1>
+      <div class="posts--count">
+        <p><%= @posts.count %> <%= (@posts.count) == 1 ? 'Пост' : 'Поста'%></p>
+        <p>Лучшие за неделю</p>
+      </div>
+      <%= react_component 'M_QuestionCard', {posts: @posts, category: @category, categories: @categories, comments: @comments} %>
+    </div>
+    <div class="popular--posts--container">
+      <%= react_component 'M_PopularPosts', {categories: @categories, posts: @posts } %>
     </div>
   </div>
 </div>
+<%= react_component 'O_Footer' %>

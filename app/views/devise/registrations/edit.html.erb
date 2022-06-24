@@ -1,23 +1,18 @@
-<div class="container_reg">
-
-<%= link_to "Назад", :back %>
+<div class="container_reg edit--user--container">
 <h2>Редактирование профиля</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
     <p>Ник</p>
       <%= f.text_field :username, autocomplete: "username" %>
   </div>
-  <div class="field">
+  <div class="field--avatar">
     <p>Изменить аватар</p>
-    <%= f.file_field :avatar %>
+    <%= f.file_field :avatar, class: 'edit--avatar' %>
+  </div>
 
-</div>
   <div class="field">
     <p>Почта</p>
-
-
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -30,7 +25,6 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
@@ -45,8 +39,8 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Обновить профиль" %>
-    <%= button_to "Удалить мой аккаунт", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    <%= f.submit "Обновить профиль", :class => 'submit_edit' %>
+    <%= link_to "Удалить мой аккаунт", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'delete--link' %>
 
   </div>
 <% end %>

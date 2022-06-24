@@ -1,3 +1,93 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.edit--user--container {
+  margin-top: 100px;
+}
+.Id--users {
+  margin-left: 100px;
+  margin-right: 85px;
+  font-weight: 600;
+  font-size: 25px;
+  color: #000000;
+}
+.Avatar--users {
+  font-weight: 600;
+  margin-right: 100px;
+  font-size: 25px;
+  color: #000000;
+}
+.email--users {
+  margin-right: 250px;
+  font-weight: 600;
+  font-size: 25px;
+  color: #000000;
+}
+.table_date--users {
+  font-weight: 600;
+  margin-left: -20px;
+  font-size: 25px;
+  color: #000000;
+}
+.edit--avatar::after {
+  content: 'кукусики';
+}
+.field--avatar {
+  width: 100%;
+      display: inline-grid;
+}
+.edit--avatar:hover::before {
+  border-color: black;
+}
+.field--avatar {
+  display: grid;
+}
+.edit--avatar:active {
+  outline: 0;
+}
+.edit--avatar:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.edit--avatar {
+  color: transparent;
+}
+.edit--avatar::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.edit--avatar::before {
+  content: 'Выберите аватар';
+  color: black;
+  display: flex;
+  background: #FBF9F4;
+  width: 557px !important;
+  border: 1px dashed #738A5F;
+  border-radius: 8px;
+  padding: 5px 8px;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  outline: none;
+  padding-top: 33px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 400;
+  font-size: 10pt;
+}
+.delete--link {
+  color: #ef6767;
+  text-align: right;
+  margin-left: 80px;
+}
+.submit_edit {
+  width: 300px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 20px;
+  height: 50px;
+  background: #738A5F !important;
+  border: 1px solid #E0E0E0;
+}

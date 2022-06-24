@@ -13,12 +13,14 @@
     <%= javascript_include_tag Ckeditor.cdn_url %>
   </head>
   <body>
-     <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
-    <% if user_signed_in?%>
+    <% if current_user.isadmin == true%>
+    <%= react_component 'O_AdminHeader', {current_user: current_user} %>
+  <% elsif user_signed_in? %>
   <%= react_component 'O_Header', {current_user: current_user} %>
   <% else %>
   <%= react_component 'O_HeaderDefault'%>
   <% end %>
+
     <%= yield %>
 
 

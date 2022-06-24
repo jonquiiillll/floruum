@@ -1,9 +1,9 @@
 class Story < ApplicationRecord
 	  scope :filter_by_starts_with, -> (title) { where("title like ?", "%#{title}%")}
 		validates :name, :presence => true
-		validates :title, :presence => true,
-											:length => { :minimum => 5 }
+
     has_many :points, :dependent => :destroy
+		has_many :mines, dependent: :destroy
 		mount_uploader :picture, PictureUploader
 
 		belongs_to :sort

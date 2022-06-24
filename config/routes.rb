@@ -53,6 +53,7 @@ end
 resources :stories do
 	resources :points
   resources :additions
+  resources :mines
 end
 resources :points do
   resources :users

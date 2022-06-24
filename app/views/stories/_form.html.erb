@@ -1,8 +1,11 @@
+<div class="new--story">
+
+<h1>Новая статья</h1>
+
 <%= form_with(model: story) do |form| %>
   <% if story.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>
-
       <ul>
         <% story.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,31 +15,29 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+ <p>Название</p>
     <%= form.text_field :name %>
   </div>
   <div class="field">
-      <%= form.label :sort_id %>
+       <p>Категория</p>
       <%= form.select :sort_id, Sort.pluck(:name, :id) %>
   </div>
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+
   <div>
-  	<%= form.label :picture %>
+  	 <p>Превью</p>
   	<%= form.file_field :picture %>
   </div>
   <div class="field">
-      <%= form.label :content %>
+       <p>Текст</p>
       <%= form.cktext_area :content %>
     </div>
   <div class="field">
-  	<%= form.label :remark %>
+  	 <p>Заметка</p>
   	<%= form.cktext_area :remark %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Создать статью', :class => 'submit_reg' %>
   </div>
 <% end %>
+</div>

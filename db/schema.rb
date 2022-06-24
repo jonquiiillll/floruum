@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_27_173033) do
+ActiveRecord::Schema.define(version: 2022_06_22_132401) do
 
   create_table "additions", force: :cascade do |t|
     t.string "commenter"
@@ -139,6 +139,15 @@ ActiveRecord::Schema.define(version: 2022_05_27_173033) do
     t.index ["art_id"], name: "index_marks_on_art_id"
   end
 
+  create_table "mines", force: :cascade do |t|
+    t.integer "story_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["story_id"], name: "index_mines_on_story_id"
+    t.index ["user_id"], name: "index_mines_on_user_id"
+  end
+
   create_table "notes", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
@@ -239,6 +248,8 @@ ActiveRecord::Schema.define(version: 2022_05_27_173033) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "marks", "arts"
+  add_foreign_key "mines", "stories"
+  add_foreign_key "mines", "users"
   add_foreign_key "notes", "posts"
   add_foreign_key "points", "stories"
   add_foreign_key "points", "users"

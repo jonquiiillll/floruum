@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 const STYLES = [
   'title--black',
   'title--white',
+  'title--post'
 ]
 
 const A_PostTitle = ({

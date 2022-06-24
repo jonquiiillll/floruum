@@ -2,20 +2,56 @@ body {
   margin: 0;
   padding: 0;
 }
+.my--posts {
+  margin-top: 200px;
+}
+.user--posts {
+  width: 60%;
+}
+.user--account {
+  display: flex;
+}
 .A_H2--white{
   font-weight: 500;
   font-size: 60px;
   color: white;
   margin: 0px;
 }
+.categories {
+  margin-top: 300px !important;
+  color: black;
+}
+.all--questions {
+  font-size: 40px;
+  font-weight: 500;
+}
+.posts--count {
+  display: flex;
+  justify-content: space-between;
+}
 .text_video {
   display: flex;
   justify-content: center;
 }
+.posts--container {
+  margin-top: 150px !important;
+ width: 87%;
+ margin: 0 auto;
+}
+.post--content {
+  display: flex;
+  justify-content: space-between;
+}
+.post--window {
+  width: 60%;
+}
+.popular--posts--container {
+  width: 452px;
+}
 .header_second {
   position: fixed;
   z-index: 1;
-  margin-top: -204px;
+  margin-top: -26px;
   position: fixed;
   width: 100%;
   display: flex;
@@ -173,12 +209,33 @@ color: white;
   display: flex;
   border-bottom: 1px solid #EBEBEB;
 }
+.stories--admin {
+  width: 86%;
+  border: 1px dashed #738A5F;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
 .left_buttons {
   display: flex;
+
   align-items: center;
 }
+// .button--add--story {
+//   background: #293C37;
+//   border-radius: 30px;
+//   width: fit-content;
+//   color: #FFFFFF;
+//   font-size: 20px;
+// line-height: 23px;
+// text-align: center;
+// padding: 15px 24px 15px;
+// }
 .right_section_navbar {
   display: flex;
+  width: 100%;
 font-style: normal;
 font-weight: 500;
 font-size: 19px;
@@ -396,7 +453,8 @@ display: flex;
   width: 10%;
 }
 .container_content_users {
-width: 70%;
+width: 95%;
+margin: 0 auto;
 
 
   // border: 1px solid #A9E163;
@@ -493,13 +551,27 @@ font-size: 20px;
 .NewPost {
   margin: 14px;
 }
+.avatar_users {
+  width: 50px;
+  border-radius: 100px;
+}
 .window {
   margin-top: 20px;
-  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  background: #FFFFFF;
+}
+.window--admin {
+  margin-top: 20px;
+  width: 90%;
+  height: 100px;
+  padding-left: 100px;
+  display: flex;
   border-radius: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
-    align-items: center;
+  align-items: center;
   background: #FFFFFF;
 }
 .count_comments {
@@ -1062,6 +1134,32 @@ justify-content: flex-end;
   color: black;
   font-weight: 600;
   font-size: 30px;
+}
+.title--post {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #131313;
+}
+.Username--black{
+  font-weight: 400;
+  font-size: 17px;
+  color: #8B8B8B;
+}
+.line-black {
+
+}
+.post--line {
+  margin-top: 40px !important;
+}
+.popular--posts {
+  background: white;
+  height: fit-content;
+  margin-top: 100px;
+  border-radius: 18px;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.03));
+  padding: 15px;
 }
 .TwoColumns {
   border: 1px solid red;

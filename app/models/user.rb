@@ -15,4 +15,7 @@ has_many :followers, through: :following_users
 
 has_many :posts, dependent: :destroy
 has_many :categories, dependent: :destroy
+
+has_many :mines, dependent: :destroy
+has_many :mines_posts, :through => :mines, :source => :story
 end

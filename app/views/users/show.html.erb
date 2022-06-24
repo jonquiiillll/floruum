@@ -1,3 +1,18 @@
 <%= react_component 'A_PreviewAccount' %>
+<% if user_signed_in? && @user.id == current_user.id %>
+	<p><%= link_to 'Edit profile', edit_user_registration_path %></p>
+<% end %>
+<div class="user--account">
 <%= react_component 'M_AccountCard', {current_user: current_user} %>
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<div class="user--posts">
+  <%= react_component 'O_MyPosts', {posts: @posts, categories: @categories, comments: @comments} %>
+</div>
+</div>
+<div class="my--posts">
+   У вас <%= @user.posts.count %> <%= (@user.posts.count) == 1 ? 'Вопрос' : 'Вопроса'%>
+  <% @user.posts.each do |post| %>
+    <%= link_to post.name, post %>
+    <td><%= post.content %></td>
+  <% end %>
+</div>
