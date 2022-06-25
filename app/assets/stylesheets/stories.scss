@@ -62,12 +62,17 @@
 .counter {
   display: flex;
 }
+.value--margin {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 100px!important;
+}
 .button--text {
   margin: 0 auto;
     width: 11%;
 }
 .comment--submit {
-  background: url('A_Sendicon.svg');
+  background: url('SendIcon.svg');
   border: 0px white solid;
   width: 38px;
   margin-left: 10px;

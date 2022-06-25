@@ -1,0 +1,20 @@
+<div class="account--card--user">
+  <%= react_component 'M_AccountCard', {current_user: current_user} %>
+  <div class="info--account">
+    <% if current_user.isadmin == true%>
+    <p class="admin--value">admin</p>
+    <% end %>
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <p><%= link_to 'Редактировать профиль', edit_user_registration_path, :class => 'edit--user' %></p>
+    <% end %>
+    <div class="posts--count">
+    <p>Посты</p>
+      <%= @user.posts.count %>
+    </div>
+    <div class="posts--count--second">
+    <p>Статьи</p>
+      <p>2</p>
+    </div>
+    <%= link_to 'Выйти', destroy_user_session_path, method: :delete, :class => 'log_out' %>
+  </div>
+</div>

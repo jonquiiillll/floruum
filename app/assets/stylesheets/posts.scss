@@ -10,6 +10,7 @@ body {
 }
 .user--account {
   display: flex;
+  justify-content:space-between;
 }
 .A_H2--white{
   font-weight: 500;
@@ -1195,19 +1196,45 @@ justify-content: flex-end;
 }
 .avatar_page {
   width: 119px;
+  justify-content: center;
+  display: flex;
 }
 .end--article {
   width: 93%;
   margin: 0 auto;
 }
-.account--card {
-  width: 328px;
-  padding-top: 37px;
-  margin-left: 60px;
-  position: fixed;
-  top: 119px;
-  background: white;
+.edit--user {
+  width: 80%;
+  background: #293C37;
   border-radius: 30px;
+  font-size: 20px;
+  color: white;
+  padding-left:  25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right:  25px;
+}
+.account--card {
+width: 100%;
+  background: white;
+  border-radius: 20px;
+  height: fit-content;
+  display: contents;
+  justify-content: center;
+  padding-top: 37px;
+  top: 119px;
+}
+.account--card--user {
+  width: 328px;
+  margin-top: -100px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.03);
+  background: white;
+  border-radius: 20px;
+  height: fit-content;
+  display: table-row;
+  justify-content: center;
+  padding-top: 37px;
+  top: 119px;
 }
 .preview--account {
   width: 100%;

@@ -11,6 +11,67 @@
   font-size: 25px;
   color: #000000;
 }
+.no--posts {
+  display: flex;
+  width: 100%;
+  margin-left: -50px;
+  margin-top: 150px;
+  justify-content: center;
+}
+.text--no--post {
+  display: grid;
+  justify-content: center;
+
+}
+.icon--post-user {
+  display: flex;
+  margin: 0 auto;
+}
+.p--notification {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: #898989;
+}
+.h1--notification {
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #131313;
+}
+.user--account {
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+}
+.admin--value {
+  text-align: center;
+  margin-top: -30px;
+  color: #C5C1C1;
+}
+.posts--count {
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.posts--count--second{
+  display: flex;
+  width: 95%;
+  margin-top: -30px !important;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.log_out {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.info--account {
+  display: grid;
+  justify-content: center;
+}
 .Avatar--users {
   font-weight: 600;
   margin-right: 100px;

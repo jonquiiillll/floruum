@@ -16,7 +16,7 @@ class M_AccountCard extends React.Component {
       </div>
       <p className="account--avatar p_tag"> {this.props.current_user.username} </p>
       <div className="account--avatar">
-      <a href="/users/sign_out"> Выйти </a>
+    
       </div>
       </div>
     );
