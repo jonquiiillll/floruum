@@ -1,38 +1,21 @@
-<p id="notice"> <%= notice %></p> <p>
+<p id="notice"> <%= notice %></p>
 
   <%= react_component 'O_ArticleShow', {story: @story, sort: @sort} %>
-  <% pre_mine = @story.mines.find { |mine| mine.user_id == current_user.id} %>
-  <% if pre_mine %>
-      <%= button_to 'Remove from Favorite', story_mine_path(@story, pre_mine), method: :delete %>
-  <% else %>
-      <%= button_to 'Add to Favorite', story_mines_path(@story), method: :story %>
+<div class="actions--after--article">
+<div class="likes">
+  <%= react_component 'A_Counter', {story: @story, sort: @sort} %>
+</div>
+
+<div class="admin--actions">
+  <% if current_user.isadmin == true%>
+  <%= link_to image_tag("EditIcon.svg"), edit_story_path(@story), :class => "left--icon" %>
+  <%= link_to image_tag("Trash.svg"), @story, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-  <td><%= link_to 'Edit', edit_story_path(@story) %></td>
-  <td><%= link_to 'Destroy', @story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</p>
-  <div class="all_article_show">
-    <div class="comment--story">
-      <div class="comment--text--story">
-        <h2 class="comment--h2--story">Комментарии  <h2 class="comment--h2--story--grey"><%= @story.points.count %></h2></h2>
-      </div>
-      <% @story.points.each do |point| %>
-      <p>
-        <%= point.body %>
-      </p>
-    <p>
-       <%= User.find(current_user.id).username %>
-      </p>
-      <p>
-  <%= link_to 'Destroy Comment', [point.story, point],
-                       :confirm => 'Are you sure?',
-                       :method => :delete %>
-       </p>
+</div>
+</div>
 
-      <% end %>
-      <%= render "points/form" %>
-
-
-    </div>
+  <div class="all_article_show comment">
+    <%= render "stories/comments" %>
   </div>
 
 <%= react_component 'O_Footer' %>

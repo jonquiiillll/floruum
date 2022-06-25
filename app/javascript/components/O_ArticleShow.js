@@ -36,7 +36,6 @@ class O_ArticleShow extends React.Component {
          text = {this.props.story.remark}>
      </M_ArticleRemark>
      </div>
-     <A_Counter />
    </div>
     );
   }

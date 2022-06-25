@@ -12,7 +12,7 @@ class A_Counter extends React.Component {
   render() {
     return (
       <div className="counter">
-        <p>{this.state.count} </p>
+        <p className="counter--text">{this.state.count} </p>
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           <A_Like />
         </button>

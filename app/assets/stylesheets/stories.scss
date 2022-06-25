@@ -5,10 +5,45 @@
   background: url('back_hashtag.png');
   background-size: cover;
 }
+.actions--after--article {
+  display: flex;
+  align-items: center;
+  width: 46%;
+  margin-left: 150px;
+  justify-content: space-between;
+}
+.point--body {
+  margin-left: -20px;
+}
+.comment--story {
+  background: white;
+}
+.comment {
+  padding-bottom: 30px;
+  padding-left: 40px;
+  background: white;
+  border-radius: 20px;
+}
+.actions--point {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .new--story {
   width: 60%;
   margin: 0 auto;
   margin-top: 100px !important;
+}
+.black--user {
+  font-weight: 500;
+  font-size: 26px;
+}
+.user--point {
+  display: flex;
+  align-items: center;
+}
+.user--avatar--point {
+  margin-right: 20px;
 }
 .Hashtag--default {
   color: black;
@@ -119,6 +154,7 @@
 }
 .comment--text--story {
   display: flex;
+  margin-left: -30px;
 }
 
 .submit--point {

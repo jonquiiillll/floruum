@@ -10,9 +10,5 @@
 </div>
 </div>
 <div class="my--posts">
-   У вас <%= @user.posts.count %> <%= (@user.posts.count) == 1 ? 'Вопрос' : 'Вопроса'%>
-  <% @user.posts.each do |post| %>
-    <%= link_to post.name, post %>
-    <td><%= post.content %></td>
-  <% end %>
+
 </div>

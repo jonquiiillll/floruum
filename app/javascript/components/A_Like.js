@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-var Like = require('../../assets/images/like.svg');
+var Like = require('../../assets/images/LikeIcon.svg');
 
 
 export class A_Like extends React.Component {

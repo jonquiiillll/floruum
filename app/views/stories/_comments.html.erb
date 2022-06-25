@@ -1,0 +1,24 @@
+<div class="comment--story">
+  <div class="comment--text--story">
+    <h2 class="comment--h2--story">Комментарии  <h2 class="comment--h2--story--grey"><%= @story.points.count %></h2></h2>
+  </div>
+  <% @story.points.each do |point| %>
+  <div class="point--body">
+    <div class="user--point">
+      <%= image_tag(point.user.avatar.small_thumb.url, alt: 'Avatar', :class => "avatar_users user--avatar--point") %>
+    <p class="black--user"><%= User.find(point.user.id).username %></p>
+    </div>
+    <div class="actions--point">
+      <%= point.body %>
+      <p>
+      <%= link_to image_tag("Trash.svg"), [point.story, point],
+                     :confirm => 'Are you sure?',
+                     :method => :delete %>
+      </p>
+      <% end %>
+    </div>
+
+    <%= render "points/form" %>
+  </div>
+
+</div>
