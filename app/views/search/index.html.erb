@@ -7,11 +7,9 @@
   <div class="search--bar">
     <%= form_tag stories_path , :method => 'get' do %>
   <p>
-    <%= text_field_tag :starts_with, params[:starts_with] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :starts_with, params[:starts_with], placeholder: "Что будем искать?" %>
   </p>
 <% end %>
-    <input type="text" className="search--page" placeholder="Что будем искать?">
     <div class="search--items">
       <p className="search--text">Частые запросы по темам</p>
       <%= react_component 'M_HashtagList', {hashtags: @hashtags}%>

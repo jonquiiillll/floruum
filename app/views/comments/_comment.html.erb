@@ -1,22 +1,18 @@
 <div class="comment--show">
 <div class="answer_window">
-
   <div class="icon--post"><%= image_tag(User.find(comment.user_id).avatar.small_thumb.url, alt: 'Avatar') %></div>
   <%= User.find(comment.user_id).username %>
-
 </div>
-<p>
-		<%= comment.body.html_safe %>
-</p>
-	<% if user_signed_in? && current_user.id == comment.user_id  %>
-<p>
-	<%= link_to  [comment.post, comment],
-               :confirm => 'Are you sure?',
-               :method => :delete do%>
-	<div class="comment_delete">
 
- <%= image_tag 'DotMenu.svg', :class => "delete--icon"  %>
-<% end %>
+		<p class="body--comment--post"><%= comment.body.html_safe %></p>
+    <div class="likes--post">
+      <%= react_component 'A_Counter', {story: @story, sort: @sort} %>
+      <% if user_signed_in? && current_user.id == comment.user_id  %>
+      <%= link_to  [comment.post, comment],
+                   :confirm => 'Are you sure?',
+                   :method => :delete do%>
+      <%= image_tag 'Trash.svg'  %>
+      <% end %>
 
 <% end %>
 </div>

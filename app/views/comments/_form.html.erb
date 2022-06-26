@@ -1,12 +1,12 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-<div class="field">
+<div class="print--message--comment">
+  <div class="icon--post"><%= image_tag(User.find(current_user.id).avatar.small_thumb.url, alt: 'Avatar') %></div>
 
-</div>
-
-	<div class="comment_body_form">
-    <%= f.cktext_area :body %>
+  <div class="field">
+    <%= f.text_area :body, :placeholder => "Дать ответ", className: "textarea--comment" %>
   </div>
-	<div class="actions">
-		<%= f.submit 'Отправить' %>
-	</div>
+  <div class="actions comment-submiting">
+    <%= f.submit "", :class => 'comment--submit'%>
+  </div>
+</div>
 <% end %>

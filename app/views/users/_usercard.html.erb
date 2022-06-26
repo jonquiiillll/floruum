@@ -11,10 +11,7 @@
     <p>Посты</p>
       <%= @user.posts.count %>
     </div>
-    <div class="posts--count--second">
-    <p>Статьи</p>
-      <p>2</p>
-    </div>
+  
     <%= link_to 'Выйти', destroy_user_session_path, method: :delete, :class => 'log_out' %>
   </div>
 </div>

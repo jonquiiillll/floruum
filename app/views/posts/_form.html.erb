@@ -2,7 +2,6 @@
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -13,18 +12,15 @@
   <div class="new_post">
 <div class="left_new_post">
   <%= react_component 'O_Postform', { post: @post, categories: @categories } %>
-  <div>
-    <p class="text_new">Превью</p>
-  <%= form.file_field :image %>
+  <div class="preview--img">
+  <%= form.file_field :image, class: 'preview--window' %>
   </div>
-
   <div class="field">
     <p class="text_new">Контент</p>
     <%= form.cktext_area :content %>
   </div>
-
   <div class="actions">
-    <%= form.submit value="Опубликовать" %>
+    <%= form.submit value="Опубликовать", :class => "button--uploud" %>
   </div>
   </div>
   <div class="right_new_post">

@@ -10,7 +10,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
-      <%= f.text_field :username, autocomplete: "username", placeholder: "Логин", class: 'text--field'%>
+      <%= f.text_field :username, autocomplete: "username", placeholder: "Ник", class: 'text--field'%>
   </div>
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Электронная почта/ Номер телефона" %>
@@ -27,7 +27,7 @@
   <%= f.file_field :avatar, class: 'custom-file-input' %>
   </div>
   <div class="actions">
-    <%= f.submit "Зарегестрироваться", :class => 'submit_reg' %>
+    <%= f.submit "Зарегестрироваться", :class => 'submit_registration' %>
   </div>
 <% end %>
 <%= render "devise/shared/links" %>

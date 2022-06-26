@@ -30,7 +30,7 @@ class M_QuestionCard extends React.Component {
             <A_PostUser
                 username = {post.user.username}
                 avatar = {post.user.avatar.small_thumb.url == null ? UserNotLoginIn : post.user.avatar.small_thumb.url}
-                date = {post.created_at}>
+              >
             </A_PostUser>
             </div>
       </div>

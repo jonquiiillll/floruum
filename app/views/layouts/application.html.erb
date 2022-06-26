@@ -13,7 +13,7 @@
     <%= javascript_include_tag Ckeditor.cdn_url %>
   </head>
   <body>
-    <% if current_user.isadmin == true%>
+    <% if user_signed_in? && current_user.isadmin == true%>
     <%= react_component 'O_AdminHeader', {current_user: current_user} %>
   <% elsif user_signed_in? %>
   <%= react_component 'O_Header', {current_user: current_user} %>

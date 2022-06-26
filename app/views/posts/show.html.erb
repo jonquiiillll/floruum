@@ -1,16 +1,21 @@
 <div class="content_posts_show">
   <div class="content_posts show">
     <%= react_component 'O_PostView', { post: @post, user: @user, category: @category} %>
+    <% if user_signed_in? && current_user.id == @post.user_id  %>
+      <%= link_to 'Удалить пост', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete--text" %>
+    <% end %>
+    <% if @post.comments.count == 0%>
+    <%= react_component 'M_NoComments' %>
+    <% else %>
+    <div class="comment--view">
+      <% if user_signed_in? %>
+      <% else %>
+      <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+      <% end %>
+    <%= render @post.comments %>
+    </div>
+    <% end %>
 
-<div class="comment--view">
-  <% if user_signed_in? %>
-  <% else %>
-  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
-  <% end %>
-<%= render @post.comments %>
-</div>
-<h2>Добавить комментарий:</h2>
-<!--  -->
 <%= render "comments/form" %>
 
 </div>
